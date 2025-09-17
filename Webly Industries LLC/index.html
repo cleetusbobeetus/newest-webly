@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webly Industries - Industry-Leading Web Development</title>
+    <meta name="description" content="Experience the future of web development with cutting-edge websites, AI-powered features, and revolutionary design. Get your custom website with flexible installment plans.">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-567CX2EMCP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-567CX2EMCP');
+    </script>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo"></div>
+        <div class="loading-text">Loading Advanced Experience...</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="#home">Webly Industries</a></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+            <div class="hero-content">
+            <h1 class="hero-title">The Future of Web Development</h1>
+            <p class="hero-subtitle">Experience cutting-edge websites with AI-powered features, 3D graphics, and revolutionary design that converts visitors into clients</p>
+            <div class="hero-cta">
+                <a href="#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="#features" class="btn-secondary">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="process">
+        <div class="process-container">
+            <div class="process-tag fade-in">WORKING PROCESS</div>
+            <h2 class="section-title fade-in">How It Works</h2>
+            <p class="section-subtitle fade-in">A Streamlined Journey From Vision to Execution</p>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-icon">
+                        <div class="icon-circle">📱</div>
+                    </div>
+                    <h3>Select Your Service</h3>
+                    <p>Browse through our offerings and choose the one that aligns with your goals — from custom software to full-stack development. Need guidance? Our experts are one call away.</p>
+                </div>
+                
+                <div class="process-arrow fade-in">→</div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-icon">
+                        <div class="icon-circle">📊</div>
+                    </div>
+                    <h3>Project Analysis</h3>
+                    <p>We dive deep to understand your business, define requirements, and map out a tailored strategy. You get clarity, timelines, and tech-stack recommendations up front.</p>
+                </div>
+                
+                <div class="process-arrow fade-in">→</div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-icon">
+                        <div class="icon-circle">🌐</div>
+                    </div>
+                    <h3>Execution & Iteration</h3>
+                    <p>Our team begins development, delivering in sprints with full transparency. You review progress, give feedback, and stay involved. Agile, collaborative, and always improving.</p>
+                </div>
+            </div>
+            
+            <div class="process-footer fade-in">
+                <p>Need more help? <a href="#contact">Go to our Support Center</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title fade-in">Revolutionary Features</h2>
+        <p class="section-subtitle fade-in">Discover the most advanced web technologies that will set your business apart from the competition</p>
+        
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">AI-Powered Intelligence</h3>
+                <p class="feature-description">Advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">3D WebGL Graphics</h3>
+                <p class="feature-description">Stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences.</p>
+                    </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Lightning Performance</h3>
+                <p class="feature-description">Optimized for speed with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality.</p>
+                        </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Mobile-First Design</h3>
+                <p class="feature-description">Responsive design that adapts perfectly to all devices with advanced touch interactions and mobile-specific features.</p>
+                    </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Enterprise Security</h3>
+                <p class="feature-description">Bank-level security with SSL encryption, secure authentication, and regular security updates to protect your data.</p>
+                </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Advanced Analytics</h3>
+                <p class="feature-description">Real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <h2 class="section-title fade-in">Flexible Pricing Plans</h2>
+            <p class="section-subtitle fade-in">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <h3 class="pricing-title">Consultation</h3>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">completely free</div>
+                    <ul class="pricing-features">
+                        <li>Email Website Analysis</li>
+                        <li>Current Website Audit</li>
+                        <li>Identify Weaknesses & Issues</li>
+                        <li>Improvement Recommendations</li>
+                        <li>Technology Upgrade Suggestions</li>
+                        <li>Performance Optimization Tips</li>
+                        <li>Custom Action Plan</li>
+                        <li>No Obligation</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Book Now</a>
+                </div>
+                
+                <div class="pricing-card launch-promotion fade-in">
+                    <div class="launch-badge">🚀 Launch Promotion!</div>
+                    <h3 class="pricing-title">Starter Website + Maintenance</h3>
+                    <div class="pricing-price">$300</div>
+                    <div class="pricing-period">installment</div>
+                    <div class="pricing-upkeep">$99 monthly upkeep/installments</div>
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>SSL Certificate Included</li>
+                        <li>Monthly Updates & Changes</li>
+                        <li>Priority Support</li>
+                        <li>Performance Monitoring</li>
+                        <li>Security Updates</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <h3 class="pricing-title">Starter</h3>
+                    <div class="pricing-price">$2,999</div>
+                    <div class="pricing-period">or $299/month for 12 months</div>
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>3 Months Free Maintenance</li>
+                        <li>SSL Certificate Included</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <h3 class="pricing-title">Professional</h3>
+                    <div class="pricing-price">$7,999</div>
+                    <div class="pricing-period">or $399/month for 24 months</div>
+                    <ul class="pricing-features">
+                        <li>15-Page Advanced Website</li>
+                        <li>3D Graphics & Animations</li>
+                        <li>AI-Powered Features</li>
+                        <li>E-commerce Integration</li>
+                        <li>Advanced Analytics</li>
+                        <li>6 Months Free Maintenance</li>
+                        <li>Priority Support</li>
+                        <li>Custom Admin Dashboard</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <h3 class="pricing-title">Enterprise</h3>
+                    <div class="pricing-price">$19,999</div>
+                    <div class="pricing-period">or $999/month for 24 months</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited Pages</li>
+                        <li>Custom WebGL Applications</li>
+                        <li>Advanced AI Integration</li>
+                        <li>Multi-language Support</li>
+                        <li>Custom API Development</li>
+                        <li>24/7 Priority Support</li>
+                        <li>White-label Solutions</li>
+                        <li>Custom Training</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title fade-in">Ready to Transform Your Business?</h2>
+        <p class="section-subtitle fade-in">Let's discuss your project and create something extraordinary together</p>
+        
+        <div class="contact-grid">
+            <div class="contact-info fade-in">
+                <h3>Get in Touch</h3>
+                <p>Ready to revolutionize your online presence? Contact me to discuss your project and get a free consultation.</p>
+                
+                <div style="margin-top: 2rem;">
+                    <h4>Contact Information</h4>
+                    <p>📧 ZaneLaFaver@gmail.com</p>
+                    <p>📱 +1 (385) 253-2721</p>
+                    <p>🌐 Available worldwide</p>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4>Why Choose Webly Industries?</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>Founder-led — you work directly with me, not an agency middleman</li>
+                        <li>Clear timelines — quotes within 48 hours, standard sites launch in 2–3 weeks</li>
+                        <li>Modern stack — AI, responsive design, and performance-first builds</li>
+                        <li>Launch warranty — 30 days of free bug fixes after your site goes live</li>
+                        <li>Affordable packages — flexible payment plans to fit your budget</li>
+                        <li>Free audit — I'll review your site and give actionable recommendations, no obligation</li>
+                    </ul>
+                </div>
+                    </div>
+            
+            <div class="contact-form fade-in">
+                <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="starter">Starter Package</option>
+                            <option value="professional">Professional Package</option>
+                            <option value="enterprise">Enterprise Package</option>
+                            <option value="maintenance">Monthly Maintenance</option>
+                            <option value="consultation">Free Consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="300-1200">$300 - $1,200</option>
+                            <option value="1200-3000">$1,200 - $3,000</option>
+                            <option value="3000-5000">$3,000 - $5,000</option>
+                            <option value="5000-plus">$5,000+</option>
+                            <option value="15000-plus">$15,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project, goals, and any specific requirements..."></textarea>
+                    </div>
+                    
+                    <!-- Formspree hidden fields -->
+                    <input type="hidden" name="_subject" value="🎯 NEW CLIENT INQUIRY - Webly Industries">
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="hidden" name="_next" value="?success=true">
+                    
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built with cutting-edge technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="stripe-config.js"></script>
+    <script src="stripe-payments.js"></script>
+    <script src="email-service.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>
