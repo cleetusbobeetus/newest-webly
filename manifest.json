@@ -1,7 +1,7 @@
 {
-  "name": "Webly Industries",
-  "short_name": "Webly",
-  "description": "Industry-leading web development with cutting-edge technologies, AI-powered features, and revolutionary design.",
+  "name": "Webly Industries - Industry-Leading Web Development",
+  "short_name": "Webly Industries",
+  "description": "Transform your business with cutting-edge websites featuring AI-powered features, 3D WebGL graphics, and revolutionary design. Professional web development with flexible payment plans starting at $300/month.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",
@@ -19,9 +19,17 @@
       "type": "image/svg+xml"
     }
   ],
-  "categories": ["business", "productivity", "utilities"],
-  "lang": "en",
+  "categories": [
+    "business",
+    "productivity", 
+    "utilities",
+    "web development",
+    "technology",
+    "design"
+  ],
+  "lang": "en-US",
   "dir": "ltr",
+  "id": "webly-industries-pwa",
   "scope": "/",
   "prefer_related_applications": false,
   "related_applications": [],

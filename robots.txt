@@ -1,0 +1,80 @@
+# Webly Industries - Robots.txt
+# https://weblyindustries.com
+
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the entire site
+Allow: /index.html
+Allow: /admin.html
+Allow: /payment-success.html
+Allow: /payment-cancel.html
+Allow: /email-api.html
+Allow: /email-test.html
+Allow: /simple-email.html
+Allow: /simple-test.html
+Allow: /test-form.html
+
+# Allow access to CSS and JS files for proper rendering
+Allow: /styles.css
+Allow: /admin-styles.css
+Allow: /script.js
+Allow: /admin-script.js
+Allow: /three-scene.js
+Allow: /stripe-payments.js
+Allow: /stripe-config.js
+Allow: /email-service.js
+
+# Allow access to images and assets
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+
+# Disallow admin and sensitive areas
+Disallow: /admin-script.js
+Disallow: /stripe-config.js
+Disallow: /config.env
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /server.js
+
+# Disallow test and development files
+Disallow: /test-form.html
+Disallow: /simple-test.html
+Disallow: /email-test.html
+
+# Sitemap location
+Sitemap: https://weblyindustries.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading server)
+Crawl-delay: 1
+
+# Additional directives for specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
