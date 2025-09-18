@@ -54,39 +54,56 @@ class ThreeScene {
     }
 
     createParticles() {
-        const particleCount = 200;
-        const geometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(particleCount * 3);
-        const colors = new Float32Array(particleCount * 3);
+        const particleCount = 300; // More particles for triangles
+        this.triangleParticles = [];
 
         for (let i = 0; i < particleCount; i++) {
-            const i3 = i * 3;
+            // Create triangle geometry
+            const triangleGeometry = new THREE.BufferGeometry();
+            const triangleVertices = new Float32Array([
+                0, 0.1, 0,      // Top vertex
+                -0.05, -0.05, 0, // Bottom left
+                0.05, -0.05, 0   // Bottom right
+            ]);
+            triangleGeometry.setAttribute('position', new THREE.BufferAttribute(triangleVertices, 3));
+
+            // Random colors
+            const color = new THREE.Color();
+            color.setHSL(0.6 + Math.random() * 0.2, 0.8, 0.7);
+
+            const material = new THREE.MeshBasicMaterial({
+                color: color,
+                transparent: true,
+                opacity: 0.6
+            });
+
+            const triangle = new THREE.Mesh(triangleGeometry, material);
             
             // Random positions
-            positions[i3] = (Math.random() - 0.5) * 20;
-            positions[i3 + 1] = (Math.random() - 0.5) * 20;
-            positions[i3 + 2] = (Math.random() - 0.5) * 20;
+            triangle.position.set(
+                (Math.random() - 0.5) * 20,
+                (Math.random() - 0.5) * 20,
+                (Math.random() - 0.5) * 20
+            );
 
-            // Gradient colors
-            const color = new THREE.Color();
-            color.setHSL(0.6 + Math.random() * 0.2, 0.8, 0.6);
-            colors[i3] = color.r;
-            colors[i3 + 1] = color.g;
-            colors[i3 + 2] = color.b;
+            // Random rotation
+            triangle.rotation.set(
+                Math.random() * Math.PI * 2,
+                Math.random() * Math.PI * 2,
+                Math.random() * Math.PI * 2
+            );
+
+            // Store animation properties
+            triangle.userData = {
+                speed: 0.01 + Math.random() * 0.02, // Faster speed
+                rotationSpeed: 0.02 + Math.random() * 0.03, // Faster rotation
+                floatSpeed: 0.005 + Math.random() * 0.01, // Faster floating
+                originalY: triangle.position.y
+            };
+
+            this.triangleParticles.push(triangle);
+            this.scene.add(triangle);
         }
-
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.05,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.8
-        });
-
-        this.particles = new THREE.Points(geometry, material);
-        this.scene.add(this.particles);
     }
 
     createGeometry() {
@@ -155,10 +172,27 @@ class ThreeScene {
 
         const time = Date.now() * 0.001;
 
-        // Rotate particles (slowed down by 75% additional)
-        if (this.particles) {
-            this.particles.rotation.x = time * 0.011; // 0.044 / 4 (75% slower)
-            this.particles.rotation.y = time * 0.022; // 0.089 / 4 (75% slower)
+        // Animate triangle particles (faster paced)
+        if (this.triangleParticles) {
+            this.triangleParticles.forEach((triangle, index) => {
+                // Fast rotation
+                triangle.rotation.x += triangle.userData.rotationSpeed;
+                triangle.rotation.y += triangle.userData.rotationSpeed * 0.7;
+                triangle.rotation.z += triangle.userData.rotationSpeed * 0.5;
+                
+                // Fast floating movement
+                triangle.position.y = triangle.userData.originalY + Math.sin(time * 2 + index) * 0.5;
+                
+                // Fast position drift
+                triangle.position.x += Math.sin(time + index) * triangle.userData.speed;
+                triangle.position.z += Math.cos(time + index) * triangle.userData.speed;
+                
+                // Reset position if it goes too far
+                if (triangle.position.x > 15) triangle.position.x = -15;
+                if (triangle.position.x < -15) triangle.position.x = 15;
+                if (triangle.position.z > 15) triangle.position.z = -15;
+                if (triangle.position.z < -15) triangle.position.z = 15;
+            });
         }
 
         // Animate floating shapes (slowed down by 75% additional)
