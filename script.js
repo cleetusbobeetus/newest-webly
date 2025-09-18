@@ -46,10 +46,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
     } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.classList.remove('scrolled');
         }
     });
 
@@ -98,16 +98,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-    // Parallax effects
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.floating-element');
-        
-        parallaxElements.forEach((element, index) => {
-            const speed = 0.5 + (index * 0.1);
-            element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
-        });
-    });
+    // Parallax effects - removed floating elements
 
     // AI Chat Widget
     createAIChatWidget();

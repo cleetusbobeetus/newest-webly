@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Mobile-First Design for Websites | Webly Industries - Responsive Web Development</title>
+    <meta name="title" content="Mobile-First Design for Websites | Webly Industries - Responsive Web Development">
+    <meta name="description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features. Mobile-first design starting at $300/month.">
+    <meta name="keywords" content="mobile-first design, responsive web design, mobile website development, touch interactions, mobile optimization, responsive design, mobile UX, mobile web development">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/mobile-first-design.html">
+    <meta property="og:title" content="Mobile-First Design for Websites | Webly Industries">
+    <meta property="og:description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features.">
+    <meta property="og:image" content="https://weblyindustries.com/images/mobile-first-design-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mobile-First Design for Websites - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/mobile-first-design.html">
+    <meta property="twitter:title" content="Mobile-First Design for Websites | Webly Industries">
+    <meta property="twitter:description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/mobile-first-design-twitter.jpg">
+    <meta property="twitter:image:alt" content="Mobile-First Design for Websites">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/mobile-first-design.html">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">Webly Industries</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-content">
+            <div class="service-icon">📱</div>
+            <h1 class="hero-title">Mobile-First Design</h1>
+            <p class="hero-subtitle">Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#contact" class="btn-secondary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>Perfect Mobile Experience on Every Device</h2>
+                <p class="lead">At Webly Industries, we specialize in mobile-first design that ensures your website looks and functions flawlessly on smartphones, tablets, and desktops. With over 60% of web traffic coming from mobile devices, we create responsive experiences that convert visitors into customers across all screen sizes.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>Responsive Design</h3>
+                        <p>Fluid layouts that adapt seamlessly to any screen size, from 320px mobile screens to 4K desktop displays, ensuring perfect presentation everywhere.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">👆</div>
+                        <h3>Touch Interactions</h3>
+                        <p>Advanced touch gestures including swipe, pinch, tap, and long-press interactions that feel natural and intuitive on mobile devices.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Mobile Performance</h3>
+                        <p>Optimized for mobile networks with fast loading times, efficient resource usage, and smooth animations that work on any device.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Thumb-Friendly Navigation</h3>
+                        <p>Navigation designed for one-handed use with properly sized touch targets and intuitive menu structures that work with thumbs.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📐</div>
+                        <h3>Flexible Grid Systems</h3>
+                        <p>CSS Grid and Flexbox layouts that automatically adjust content positioning and sizing based on available screen space.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Orientation Support</h3>
+                        <p>Seamless experience in both portrait and landscape orientations with automatic layout adjustments and content reflow.</p>
+                    </div>
+                </div>
+
+                <div class="mobile-features">
+                    <h3>Advanced Mobile Features</h3>
+                    <div class="mobile-features-grid">
+                        <div class="mobile-feature-item">
+                            <h4>Progressive Web App (PWA)</h4>
+                            <p>App-like experience with offline functionality, push notifications, and home screen installation</p>
+                        </div>
+                        <div class="mobile-feature-item">
+                            <h4>Touch Gestures</h4>
+                            <p>Swipe navigation, pinch-to-zoom, pull-to-refresh, and other native mobile interactions</p>
+                        </div>
+                        <div class="mobile-feature-item">
+                            <h4>Mobile-First Images</h4>
+                            <p>Responsive images with WebP format, lazy loading, and automatic size optimization</p>
+                        </div>
+                        <div class="mobile-feature-item">
+                            <h4>Fast Mobile Forms</h4>
+                            <p>Optimized form inputs with proper keyboards, validation, and auto-complete features</p>
+                        </div>
+                        <div class="mobile-feature-item">
+                            <h4>Mobile Navigation</h4>
+                            <p>Hamburger menus, bottom navigation, and other mobile-optimized navigation patterns</p>
+                        </div>
+                        <div class="mobile-feature-item">
+                            <h4>Performance Monitoring</h4>
+                            <p>Real-time monitoring of mobile performance metrics and user experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="device-support">
+                    <h3>Comprehensive Device Support</h3>
+                    <div class="device-grid">
+                        <div class="device-item">
+                            <h4>Smartphones</h4>
+                            <p>iPhone, Android, and all major mobile devices with screen sizes from 320px to 414px</p>
+                        </div>
+                        <div class="device-item">
+                            <h4>Tablets</h4>
+                            <p>iPad, Android tablets, and hybrid devices with screen sizes from 768px to 1024px</p>
+                        </div>
+                        <div class="device-item">
+                            <h4>Laptops</h4>
+                            <p>MacBook, Windows laptops, and Chromebooks with screen sizes from 1024px to 1440px</p>
+                        </div>
+                        <div class="device-item">
+                            <h4>Desktops</h4>
+                            <p>Large monitors and 4K displays with screen sizes from 1440px to 2560px and beyond</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Mobile-First Design Pricing</h3>
+                    <div class="pricing-options">
+                        <div class="pricing-option">
+                            <h4>Basic Mobile</h4>
+                            <div class="price">$300<span>/month</span></div>
+                            <ul>
+                                <li>Responsive design</li>
+                                <li>Basic touch interactions</li>
+                                <li>Mobile optimization</li>
+                                <li>Cross-device testing</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn-primary">Get Started</a>
+                        </div>
+                        
+                        <div class="pricing-option featured">
+                            <h4>Professional Mobile</h4>
+                            <div class="price">$699<span>/month</span></div>
+                            <ul>
+                                <li>Advanced touch gestures</li>
+                                <li>PWA capabilities</li>
+                                <li>Mobile performance optimization</li>
+                                <li>Thumb-friendly navigation</li>
+                                <li>Priority support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn-primary">Get Started</a>
+                        </div>
+                        
+                        <div class="pricing-option">
+                            <h4>Enterprise Mobile</h4>
+                            <div class="price">$1,499<span>/month</span></div>
+                            <ul>
+                                <li>Custom mobile features</li>
+                                <li>Advanced PWA development</li>
+                                <li>Native app integration</li>
+                                <li>Dedicated mobile specialist</li>
+                                <li>24/7 mobile support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Go Mobile-First?</h3>
+                    <p>Don't lose customers to poor mobile experiences. Our mobile-first design ensures your website works perfectly on every device and converts visitors into customers.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">Get Free Mobile Audit</a>
+                        <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Go Mobile-First?</h2>
+            <p class="section-subtitle">Let's discuss how mobile-first design can transform your website</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to create a mobile-first website? Contact us to discuss your mobile optimization needs and get a free consultation.</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="mobile-basic">Basic Mobile</option>
+                                <option value="mobile-professional">Professional Mobile</option>
+                                <option value="mobile-enterprise">Enterprise Mobile</option>
+                                <option value="consultation">Free Mobile Audit</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your mobile design requirements..."></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="📱 MOBILE-FIRST DESIGN INQUIRY - Webly Industries">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built mobile-first</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Mobile-First Web Design Service",
+        "name": "Mobile-First Design",
+        "description": "Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Webly Industries",
+            "url": "https://weblyindustries.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (385) 253-2721",
+                "contactType": "Customer Service",
+                "email": "ZaneLaFaver@gmail.com"
+            }
+        },
+        "url": "https://weblyindustries.com/mobile-first-design.html",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Basic Mobile",
+                "price": "300",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "CompoundPriceSpecification",
+                    "price": "300",
+                    "priceCurrency": "USD",
+                    "billingIncrement": "P1M"
+                }
+            },
+            {
+                "@type": "Offer",
+                "name": "Professional Mobile",
+                "price": "699",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "CompoundPriceSpecification",
+                    "price": "699",
+                    "priceCurrency": "USD",
+                    "billingIncrement": "P1M"
+                }
+            },
+            {
+                "@type": "Offer",
+                "name": "Enterprise Mobile",
+                "price": "1499",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "CompoundPriceSpecification",
+                    "price": "1499",
+                    "priceCurrency": "USD",
+                    "billingIncrement": "P1M"
+                }
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mobile-First Design Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Responsive Design",
+                        "description": "Fluid layouts that adapt seamlessly to any screen size"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Touch Interactions",
+                        "description": "Advanced touch gestures for natural mobile interactions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mobile Performance",
+                        "description": "Optimized for mobile networks with fast loading times"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="stripe-config.js"></script>
+    <script src="stripe-payments.js"></script>
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>

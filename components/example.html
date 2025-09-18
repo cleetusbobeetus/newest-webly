@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webly Industries - Component Example</title>
+    
+    <!-- Include React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Include Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Include component styles -->
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Footer.css">
+    
+    <!-- Include main styles for consistency -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .main-content {
+            min-height: 100vh;
+            padding-top: 100px; /* Account for fixed header */
+        }
+        
+        .hero-section {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+        
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #64748b;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Header Component
+        const Header = ({ currentPage = 'home', showGetStarted = true }) => {
+            const [isScrolled, setIsScrolled] = React.useState(false);
+            const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+            React.useEffect(() => {
+                const handleScroll = () => {
+                    setIsScrolled(window.scrollY > 50);
+                };
+
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const toggleMobileMenu = () => {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+            };
+
+            const closeMobileMenu = () => {
+                setIsMobileMenuOpen(false);
+            };
+
+            const scrollToSection = (sectionId) => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+                closeMobileMenu();
+            };
+
+            const navItems = [
+                { id: 'home', label: 'Home', href: 'index.html' },
+                { id: 'features', label: 'Features', href: 'index.html#features' },
+                { id: 'pricing', label: 'Pricing', href: 'index.html#pricing' },
+                { id: 'contact', label: 'Contact', href: 'index.html#contact' }
+            ];
+
+            return (
+                <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+                    <div className="nav-container">
+                        <div className="logo">
+                            <a href="index.html" onClick={(e) => {
+                                if (currentPage === 'home') {
+                                    e.preventDefault();
+                                    scrollToSection('hero');
+                                }
+                            }}>
+                                <img 
+                                    src="../Public/Images/webly logo.png" 
+                                    alt="Webly Industries" 
+                                    className="logo-image"
+                                />
+                                <span className="logo-text">Webly Industries</span>
+                            </a>
+                        </div>
+
+                        <ul className="nav-links">
+                            {navItems.map((item) => (
+                                <li key={item.id}>
+                                    <a 
+                                        href={item.href}
+                                        className={currentPage === item.id ? 'active' : ''}
+                                        onClick={(e) => {
+                                            if (currentPage === 'home' && item.id !== 'home') {
+                                                e.preventDefault();
+                                                scrollToSection(item.id);
+                                            }
+                                        }}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {showGetStarted && (
+                            <a 
+                                href="index.html#contact" 
+                                className="cta-button"
+                                onClick={(e) => {
+                                    if (currentPage === 'home') {
+                                        e.preventDefault();
+                                        scrollToSection('contact');
+                                    }
+                                }}
+                            >
+                                Get Started
+                            </a>
+                        )}
+
+                        <button 
+                            className="mobile-menu-button"
+                            onClick={toggleMobileMenu}
+                            aria-label="Toggle mobile menu"
+                        >
+                            <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+                        <div className="mobile-menu-content">
+                            <ul className="mobile-nav-links">
+                                {navItems.map((item) => (
+                                    <li key={item.id}>
+                                        <a 
+                                            href={item.href}
+                                            className={currentPage === item.id ? 'active' : ''}
+                                            onClick={(e) => {
+                                                if (currentPage === 'home' && item.id !== 'home') {
+                                                    e.preventDefault();
+                                                    scrollToSection(item.id);
+                                                }
+                                                closeMobileMenu();
+                                            }}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                            
+                            {showGetStarted && (
+                                <a 
+                                    href="index.html#contact" 
+                                    className="mobile-cta-button"
+                                    onClick={(e) => {
+                                        if (currentPage === 'home') {
+                                            e.preventDefault();
+                                            scrollToSection('contact');
+                                        }
+                                        closeMobileMenu();
+                                    }}
+                                >
+                                    Get Started
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </nav>
+            );
+        };
+
+        // Footer Component
+        const Footer = ({ 
+            currentPage = 'home',
+            tagline = 'Built with cutting-edge technology',
+            showFullFooter = true 
+        }) => {
+            const currentYear = new Date().getFullYear();
+
+            const footerLinks = [
+                { label: 'Home', href: 'index.html' },
+                { label: 'Features', href: 'index.html#features' },
+                { label: 'Pricing', href: 'index.html#pricing' },
+                { label: 'Contact', href: 'index.html#contact' }
+            ];
+
+            const scrollToSection = (sectionId) => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+
+            const scrollToTop = () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            return (
+                <footer className="footer">
+                    <div className="footer-content">
+                        {showFullFooter && (
+                            <>
+                                <div className="footer-main">
+                                    <div className="footer-section">
+                                        <h3 className="footer-title">Webly Industries</h3>
+                                        <p className="footer-description">
+                                            Transforming the web with cutting-edge technology, AI-powered solutions, 
+                                            and stunning 3D experiences that captivate and convert.
+                                        </p>
+                                        <div className="footer-contact">
+                                            <p>📧 ZaneLaFaver@gmail.com</p>
+                                            <p>📱 +1 (385) 253-2721</p>
+                                            <p>🌐 Available worldwide</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="footer-section">
+                                        <h4 className="footer-subtitle">Quick Links</h4>
+                                        <ul className="footer-links">
+                                            {footerLinks.map((link) => (
+                                                <li key={link.label}>
+                                                    <a 
+                                                        href={link.href}
+                                                        onClick={(e) => {
+                                                            if (currentPage === 'home' && link.href.includes('#')) {
+                                                                e.preventDefault();
+                                                                const sectionId = link.href.split('#')[1];
+                                                                scrollToSection(sectionId);
+                                                            }
+                                                        }}
+                                                    >
+                                                        {link.label}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div className="footer-section">
+                                        <h4 className="footer-subtitle">Services</h4>
+                                        <ul className="footer-links">
+                                            <li><a href="ai-powered-intelligence.html">AI-Powered Intelligence</a></li>
+                                            <li><a href="3d-webgl-graphics.html">3D WebGL Graphics</a></li>
+                                            <li><a href="lightning-performance.html">Lightning Performance</a></li>
+                                            <li><a href="mobile-first-design.html">Mobile-First Design</a></li>
+                                            <li><a href="enterprise-security.html">Enterprise Security</a></li>
+                                            <li><a href="advanced-analytics.html">Advanced Analytics</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="footer-section">
+                                        <h4 className="footer-subtitle">Resources</h4>
+                                        <ul className="footer-links">
+                                            <li><a href="index.html#pricing">Pricing Plans</a></li>
+                                            <li><a href="index.html#contact">Get Started</a></li>
+                                            <li><a href="mailto:ZaneLaFaver@gmail.com">Support</a></li>
+                                            <li><a href="https://weblyindustries.com">Documentation</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div className="footer-social">
+                                    <h4 className="footer-subtitle">Follow Us</h4>
+                                    <div className="social-links">
+                                        <a href="https://twitter.com/WeblyIndustries" target="_blank" rel="noopener noreferrer">
+                                            <span className="social-icon">🐦</span>
+                                            Twitter
+                                        </a>
+                                        <a href="https://linkedin.com/company/webly-industries" target="_blank" rel="noopener noreferrer">
+                                            <span className="social-icon">💼</span>
+                                            LinkedIn
+                                        </a>
+                                        <a href="https://github.com/webly-industries" target="_blank" rel="noopener noreferrer">
+                                            <span className="social-icon">🐙</span>
+                                            GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+
+                        <div className="footer-bottom">
+                            <div className="footer-bottom-content">
+                                <p className="footer-copyright">
+                                    &copy; {currentYear} Webly Industries. All rights reserved.
+                                </p>
+                                {tagline && (
+                                    <p className="footer-tagline">| {tagline}</p>
+                                )}
+                                <button 
+                                    className="scroll-to-top"
+                                    onClick={scrollToTop}
+                                    aria-label="Scroll to top"
+                                >
+                                    ↑
+                                </button>
+                            </div>
+                            
+                            <div className="footer-legal">
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="terms-of-service.html">Terms of Service</a>
+                                <a href="cookie-policy.html">Cookie Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            );
+        };
+
+        // Main App Component
+        const App = () => {
+            return (
+                <div>
+                    <Header currentPage="home" showGetStarted={true} />
+                    
+                    <main className="main-content">
+                        <section id="hero" className="hero-section">
+                            <div className="hero-content">
+                                <h1>React TypeScript Components</h1>
+                                <p>Reusable Header and Footer components for Webly Industries</p>
+                                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                    <a href="index.html#features" className="btn-primary">View Features</a>
+                                    <a href="index.html#pricing" className="btn-secondary">See Pricing</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="content-section">
+                            <h2>Component Features</h2>
+                            <p>
+                                These React TypeScript components provide a consistent navigation and footer 
+                                experience across all your Webly Industries pages. They include responsive 
+                                design, smooth scrolling, and mobile menu support.
+                            </p>
+                            <p>
+                                The components are fully customizable and can be easily integrated into 
+                                any React application or converted to vanilla JavaScript for use in 
+                                traditional HTML pages.
+                            </p>
+                        </section>
+                    </main>
+                    
+                    <Footer 
+                        currentPage="home" 
+                        tagline="Built with React & TypeScript"
+                        showFullFooter={true} 
+                    />
+                </div>
+            );
+        };
+
+        // Render the app
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
