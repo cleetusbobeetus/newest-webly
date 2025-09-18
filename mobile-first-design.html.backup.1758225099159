@@ -142,7 +142,7 @@
 </head>
 <body>
         <!-- Navigation -->
-                <nav class="navbar">
+            <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <a href="#home">

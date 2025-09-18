@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Mobile-First Design for Websites | Webly Industries - Responsive Web Development</title>
-    <meta name="title" content="Mobile-First Design for Websites | Webly Industries - Responsive Web Development">
-    <meta name="description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features. Mobile-first design starting at $300/month.">
-    <meta name="keywords" content="mobile-first design, responsive web design, mobile website development, touch interactions, mobile optimization, responsive design, mobile UX, mobile web development">
+    <title>3D WebGL Graphics for Websites | Webly Industries - Stunning 3D Visualizations</title>
+    <meta name="title" content="3D WebGL Graphics for Websites | Webly Industries - Stunning 3D Visualizations">
+    <meta name="description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert. Professional 3D web development starting at $300/month.">
+    <meta name="keywords" content="3D WebGL graphics, Three.js development, 3D website design, WebGL animations, interactive 3D elements, 3D web development, immersive web experiences, 3D graphics programming">
     <meta name="author" content="Zane LaFaver - Webly Industries">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -16,28 +16,28 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://weblyindustries.com/mobile-first-design.html">
-    <meta property="og:title" content="Mobile-First Design for Websites | Webly Industries">
-    <meta property="og:description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features.">
-    <meta property="og:image" content="https://weblyindustries.com/images/mobile-first-design-og.jpg">
+    <meta property="og:url" content="https://weblyindustries.com/3d-webgl-graphics.html">
+    <meta property="og:title" content="3D WebGL Graphics for Websites | Webly Industries">
+    <meta property="og:description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert.">
+    <meta property="og:image" content="https://weblyindustries.com/images/3d-webgl-graphics-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Mobile-First Design for Websites - Webly Industries">
+    <meta property="og:image:alt" content="3D WebGL Graphics for Websites - Webly Industries">
     <meta property="og:site_name" content="Webly Industries">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://weblyindustries.com/mobile-first-design.html">
-    <meta property="twitter:title" content="Mobile-First Design for Websites | Webly Industries">
-    <meta property="twitter:description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features.">
-    <meta property="twitter:image" content="https://weblyindustries.com/images/mobile-first-design-twitter.jpg">
-    <meta property="twitter:image:alt" content="Mobile-First Design for Websites">
+    <meta property="twitter:url" content="https://weblyindustries.com/3d-webgl-graphics.html">
+    <meta property="twitter:title" content="3D WebGL Graphics for Websites | Webly Industries">
+    <meta property="twitter:description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/3d-webgl-graphics-twitter.jpg">
+    <meta property="twitter:image:alt" content="3D WebGL Graphics for Websites">
     <meta property="twitter:creator" content="@WeblyIndustries">
     <meta property="twitter:site" content="@WeblyIndustries">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://weblyindustries.com/mobile-first-design.html">
+    <link rel="canonical" href="https://weblyindustries.com/3d-webgl-graphics.html">
     
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,7 +142,7 @@
 </head>
 <body>
         <!-- Navigation -->
-                <nav class="navbar">
+        <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <a href="#home">
@@ -168,9 +168,9 @@
         </div>
         <div class="hero-content">
             <a href="index.html#features" class="back-to-features">← Back to Features</a>
-            <div class="service-icon" data-icon="📱">📱</div>
-            <h1 class="hero-title" data-title="Mobile-First Design">Mobile-First Design</h1>
-            <p class="hero-subtitle" data-subtitle="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience">Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience</p>
+            <div class="service-icon" data-icon="🎨">🎨</div>
+            <h1 class="hero-title" data-title="3D WebGL Graphics">3D WebGL Graphics</h1>
+            <p class="hero-subtitle" data-subtitle="Create stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences that captivate and convert">Create stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences that captivate and convert</p>
             <div class="hero-cta">
                 <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
                 <a href="index.html#features" class="btn-secondary">Explore Features</a>
@@ -182,100 +182,107 @@
     <section class="service-details">
         <div class="container">
             <div class="service-content">
-                <h2>Perfect Mobile Experience on Every Device</h2>
-                <p class="lead">At Webly Industries, we specialize in mobile-first design that ensures your website looks and functions flawlessly on smartphones, tablets, and desktops. With over 60% of web traffic coming from mobile devices, we create responsive experiences that convert visitors into customers across all screen sizes.</p>
+                <h2>Bring Your Website to Life with 3D WebGL Graphics</h2>
+                <p class="lead">At Webly Industries, we specialize in creating breathtaking 3D web experiences using cutting-edge WebGL technology and Three.js. Our 3D graphics solutions transform ordinary websites into immersive, interactive experiences that engage users and drive conversions.</p>
                 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <div class="feature-icon">📱</div>
-                        <h3>Responsive Design</h3>
-                        <p>Fluid layouts that adapt seamlessly to any screen size, from 320px mobile screens to 4K desktop displays, ensuring perfect presentation everywhere.</p>
+                        <div class="feature-icon">🎯</div>
+                        <h3>Interactive 3D Models</h3>
+                        <p>Custom 3D models that users can rotate, zoom, and interact with in real-time. Perfect for product showcases, architectural visualizations, and educational content.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">👆</div>
-                        <h3>Touch Interactions</h3>
-                        <p>Advanced touch gestures including swipe, pinch, tap, and long-press interactions that feel natural and intuitive on mobile devices.</p>
+                        <div class="feature-icon">✨</div>
+                        <h3>Particle Systems</h3>
+                        <p>Dynamic particle effects that create stunning visual impact. From floating particles to complex simulations, we bring your ideas to life with fluid, responsive animations.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🌊</div>
+                        <h3>Fluid Animations</h3>
+                        <p>Smooth, 60fps animations that respond to user interactions. Our WebGL implementations ensure buttery-smooth performance across all devices and browsers.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Interactive Scenes</h3>
+                        <p>Immersive 3D environments that users can explore and interact with. Create engaging experiences that keep visitors on your site longer.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>Responsive 3D graphics that work seamlessly on mobile devices. Touch controls and optimized performance for the best mobile experience.</p>
                     </div>
                     
                     <div class="feature-item">
                         <div class="feature-icon">⚡</div>
-                        <h3>Mobile Performance</h3>
-                        <p>Optimized for mobile networks with fast loading times, efficient resource usage, and smooth animations that work on any device.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Thumb-Friendly Navigation</h3>
-                        <p>Navigation designed for one-handed use with properly sized touch targets and intuitive menu structures that work with thumbs.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">📐</div>
-                        <h3>Flexible Grid Systems</h3>
-                        <p>CSS Grid and Flexbox layouts that automatically adjust content positioning and sizing based on available screen space.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Orientation Support</h3>
-                        <p>Seamless experience in both portrait and landscape orientations with automatic layout adjustments and content reflow.</p>
+                        <h3>Performance Optimized</h3>
+                        <p>Lightweight, efficient 3D implementations that load fast and run smoothly. We optimize for performance without sacrificing visual quality.</p>
                     </div>
                 </div>
 
-                <div class="mobile-features">
-                    <h3>Advanced Mobile Features</h3>
-                    <div class="mobile-features-grid">
-                        <div class="mobile-feature-item">
-                            <h4>Progressive Web App (PWA)</h4>
-                            <p>App-like experience with offline functionality, push notifications, and home screen installation</p>
+                <div class="technology-section">
+                    <h3>Advanced 3D Technologies We Use</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>WebGL 2.0</h4>
+                            <p>Latest WebGL standard for maximum performance and visual quality</p>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Touch Gestures</h4>
-                            <p>Swipe navigation, pinch-to-zoom, pull-to-refresh, and other native mobile interactions</p>
+                        <div class="tech-item">
+                            <h4>Three.js</h4>
+                            <p>Industry-leading 3D library for web development</p>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Mobile-First Images</h4>
-                            <p>Responsive images with WebP format, lazy loading, and automatic size optimization</p>
+                        <div class="tech-item">
+                            <h4>GLSL Shaders</h4>
+                            <p>Custom shaders for unique visual effects and materials</p>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Fast Mobile Forms</h4>
-                            <p>Optimized form inputs with proper keyboards, validation, and auto-complete features</p>
+                        <div class="tech-item">
+                            <h4>GSAP Animations</h4>
+                            <p>Professional-grade animations and timeline controls</p>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Mobile Navigation</h4>
-                            <p>Hamburger menus, bottom navigation, and other mobile-optimized navigation patterns</p>
+                        <div class="tech-item">
+                            <h4>Physics Engines</h4>
+                            <p>Realistic physics simulations for interactive elements</p>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Performance Monitoring</h4>
-                            <p>Real-time monitoring of mobile performance metrics and user experience</p>
+                        <div class="tech-item">
+                            <h4>Post-Processing</h4>
+                            <p>Advanced effects like bloom, SSAO, and color grading</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="device-support">
-                    <h3>Comprehensive Device Support</h3>
-                    <div class="device-grid">
-                        <div class="device-item">
-                            <h4>Smartphones</h4>
-                            <p>iPhone, Android, and all major mobile devices with screen sizes from 320px to 414px</p>
+                <div class="use-cases-section">
+                    <h3>Perfect for These Industries</h3>
+                    <div class="use-cases-grid">
+                        <div class="use-case-item">
+                            <h4>E-commerce</h4>
+                            <p>3D product viewers, virtual try-ons, and interactive catalogs</p>
                         </div>
-                        <div class="device-item">
-                            <h4>Tablets</h4>
-                            <p>iPad, Android tablets, and hybrid devices with screen sizes from 768px to 1024px</p>
+                        <div class="use-case-item">
+                            <h4>Real Estate</h4>
+                            <p>Virtual property tours, architectural visualizations, and 3D floor plans</p>
                         </div>
-                        <div class="device-item">
-                            <h4>Laptops</h4>
-                            <p>MacBook, Windows laptops, and Chromebooks with screen sizes from 1024px to 1440px</p>
+                        <div class="use-case-item">
+                            <h4>Education</h4>
+                            <p>Interactive learning experiences, 3D models, and simulations</p>
                         </div>
-                        <div class="device-item">
-                            <h4>Desktops</h4>
-                            <p>Large monitors and 4K displays with screen sizes from 1440px to 2560px and beyond</p>
+                        <div class="use-case-item">
+                            <h4>Gaming</h4>
+                            <p>Browser-based games, interactive experiences, and 3D interfaces</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Architecture</h4>
+                            <p>Building visualizations, interior design, and construction planning</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Entertainment</h4>
+                            <p>Interactive media, virtual experiences, and creative showcases</p>
                         </div>
                     </div>
                 </div>
 
-                
                 <div class="pricing-section">
                     <h3>Flexible Pricing Plans</h3>
                     <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
@@ -359,13 +366,12 @@
                 </div>
                 </div>
                 </div>
-                </div>
 
                 <div class="cta-section">
-                    <h3>Ready to Go Mobile-First?</h3>
-                    <p>Don't lose customers to poor mobile experiences. Our mobile-first design ensures your website works perfectly on every device and converts visitors into customers.</p>
+                    <h3>Ready to Create Stunning 3D Experiences?</h3>
+                    <p>Transform your website with cutting-edge 3D WebGL graphics that captivate your audience and set you apart from the competition.</p>
                     <div class="cta-buttons">
-                        <a href="index.html#contact" class="btn-primary">Get Free Mobile Audit</a>
+                        <a href="index.html#contact" class="btn-primary">Get Free 3D Consultation</a>
                         <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
                     </div>
                 </div>
@@ -376,13 +382,13 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Ready to Go Mobile-First?</h2>
-            <p class="section-subtitle">Let's discuss how mobile-first design can transform your website</p>
+            <h2 class="section-title">Ready to Get Started with 3D Graphics?</h2>
+            <p class="section-subtitle">Let's discuss how 3D WebGL graphics can transform your website</p>
             
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p>Ready to create a mobile-first website? Contact us to discuss your mobile optimization needs and get a free consultation.</p>
+                    <p>Ready to create stunning 3D experiences? Contact us to discuss your project and get a free consultation.</p>
                     
                     <div class="contact-details">
                         <h4>Contact Information</h4>
@@ -413,18 +419,18 @@
                             <label for="service">Service Interest</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="mobile-basic">Basic Mobile</option>
-                                <option value="mobile-professional">Professional Mobile</option>
-                                <option value="consultation">Free Mobile Audit</option>
+                                <option value="3d-basic">Basic 3D Package</option>
+                                <option value="3d-professional">Professional 3D Package</option>
+                                <option value="consultation">Free 3D Consultation</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your mobile design requirements..."></textarea>
+                            <textarea id="message" name="message" placeholder="Tell us about your 3D graphics requirements and vision..."></textarea>
                         </div>
                         
-                        <input type="hidden" name="_subject" value="📱 MOBILE-FIRST DESIGN INQUIRY - Webly Industries">
+                        <input type="hidden" name="_subject" value="🎨 3D WEBGL GRAPHICS INQUIRY - Webly Industries">
                         <input type="hidden" name="_replyto" value="">
                         <input type="hidden" name="_next" value="?success=true">
                         
@@ -445,7 +451,7 @@
                 <a href="index.html#contact">Contact</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Webly Industries. All rights reserved. | Built mobile-first</p>
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built with cutting-edge 3D technology</p>
             </div>
         </div>
     </footer>
@@ -455,9 +461,9 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Mobile-First Web Design Service",
-        "name": "Mobile-First Design",
-        "description": "Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience.",
+        "serviceType": "3D WebGL Graphics Service",
+        "name": "3D WebGL Graphics",
+        "description": "Stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences.",
         "provider": {
             "@type": "Organization",
             "name": "Webly Industries",
@@ -469,22 +475,22 @@
                 "email": "ZaneLaFaver@gmail.com"
             }
         },
-        "url": "https://weblyindustries.com/mobile-first-design.html",
+        "url": "https://weblyindustries.com/3d-webgl-graphics.html",
         "offers": [
             {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Touch Interactions",
-                        "description": "Advanced touch gestures for natural mobile interactions"
+                        "name": "Particle Systems",
+                        "description": "Dynamic particle effects for stunning visual impact"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Mobile Performance",
-                        "description": "Optimized for mobile networks with fast loading times"
+                        "name": "Fluid Animations",
+                        "description": "Smooth, 60fps animations that respond to user interactions"
                     }
                 }
             ]
