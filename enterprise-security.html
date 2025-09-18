@@ -64,8 +64,7 @@
             padding: 3rem;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+            border: 1px solid rgba(255, 255, 255, 0.1)}
         
         .security-layers h3 {
             font-size: 2.5rem;
@@ -75,15 +74,13 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+            background-clip: text}
         
         .layers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
-        }
+            margin-top: 2rem}
         
         /* Compliance Section */
         .compliance-section {
@@ -91,8 +88,7 @@
             padding: 3rem;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+            border: 1px solid rgba(255, 255, 255, 0.1)}
         
         .compliance-section h3 {
             font-size: 2.5rem;
@@ -102,15 +98,13 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+            background-clip: text}
         
         .compliance-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
-        }
+            margin-top: 2rem}
         
         /* Clickable Card Styles */
         .clickable-card {
@@ -127,8 +121,7 @@
             min-height: 280px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-        }
+            justify-content: center}
         
         .clickable-card::before {
             content: '';
@@ -138,18 +131,15 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
+            transition: left 0.5s ease}
         
         .clickable-card:hover::before {
-            left: 100%;
-        }
+            left: 100%}
         
         .clickable-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-        }
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2)}
         
         .card-icon {
             width: 80px;
@@ -162,8 +152,7 @@
             justify-content: center;
             font-size: 2.5rem;
             position: relative;
-            z-index: 2;
-        }
+            z-index: 2}
         
         .clickable-card h4 {
             font-size: 1.9rem;
@@ -171,53 +160,45 @@
             margin-bottom: 1rem;
             color: var(--light);
             position: relative;
-            z-index: 2;
-        }
+            z-index: 2}
         
         .clickable-card p {
             color: var(--gray);
             line-height: 1.6;
             position: relative;
-            z-index: 2;
-        }
+            z-index: 2}
         
         /* Responsive Design */
         @media (max-width: 768px) {
             .layers-grid,
             .compliance-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+                gap: 1.5rem}
             
             .clickable-card {
                 min-height: 250px;
-                padding: 2rem;
-            }
+                padding: 2rem}
             
             .card-icon {
                 width: 60px;
                 height: 60px;
-                font-size: 2rem;
-            }
+                font-size: 2rem}
             
             .security-layers h3,
             .compliance-section h3 {
-                font-size: 2rem;
-            }
+                font-size: 2rem}
         }
     
         /* Consultation card styling for sublink pages */
         .pricing-option.consultation {
             border-color: var(--secondary);
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-        }
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%)}
         
         .pricing-option.consultation .pricing-price {
             background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+            background-clip: text}
         
         /* Launch promotion styling for sublink pages */
         .pricing-option.launch-promotion {
@@ -226,8 +207,7 @@
             box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
             transform: scale(1.02);
             position: relative;
-            overflow: visible;
-        }
+            overflow: visible}
         
         .pricing-option.launch-promotion::before {
             content: '';
@@ -240,8 +220,7 @@
             border-radius: 20px;
             z-index: -1;
             animation: launchGlow 8s ease-in-out infinite alternate;
-            opacity: 0.8;
-        }
+            opacity: 0.8}
         
         .pricing-option.launch-promotion .pricing-price {
             color: #000000;
@@ -252,14 +231,12 @@
             text-rendering: optimizeLegibility;
             font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
             letter-spacing: -0.02em;
-            filter: contrast(1.1) brightness(1.05);
-        }
+            filter: contrast(1.1) brightness(1.05)}
         
         .pricing-option.launch-promotion .pricing-period {
             color: #000000;
             font-weight: 700;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)}
         
         .pricing-option.launch-promotion .pricing-upkeep {
             color: #000000;
@@ -267,16 +244,14 @@
             font-size: 1.1rem;
             margin-top: 0.1rem;
             margin-bottom: 1rem;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)}
         
         .pricing-option.launch-promotion .pricing-features li {
             color: #000000 !important;
             font-weight: 600;
             font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
+            line-height: 1.6}
         
         .pricing-option.launch-promotion .pricing-features li::before {
             content: '✓';
@@ -285,8 +260,7 @@
             color: #fbbf24;
             font-weight: bold;
             font-size: 1.1em;
-            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
-        }
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6)}
     
     </style>
 </head>
