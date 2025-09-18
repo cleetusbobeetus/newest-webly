@@ -54,61 +54,136 @@ class ThreeScene {
     }
 
     createParticles() {
-        const particleCount = 300; // More particles for triangles
-        this.triangleParticles = [];
+        const spaceshipCount = 20; // Fewer but more detailed spaceships
+        this.spaceships = [];
+        this.lasers = [];
+        this.lastLaserTime = 0;
 
-        for (let i = 0; i < particleCount; i++) {
-            // Create triangle geometry
-            const triangleGeometry = new THREE.BufferGeometry();
-            const triangleVertices = new Float32Array([
-                0, 0.1, 0,      // Top vertex
-                -0.05, -0.05, 0, // Bottom left
-                0.05, -0.05, 0   // Bottom right
+        for (let i = 0; i < spaceshipCount; i++) {
+            // Create spaceship geometry (more detailed triangle)
+            const spaceshipGeometry = new THREE.BufferGeometry();
+            const spaceshipVertices = new Float32Array([
+                // Main body
+                0, 0.08, 0,      // Nose
+                -0.03, -0.04, 0, // Left wing
+                0.03, -0.04, 0,  // Right wing
+                0, -0.08, 0,     // Tail
+                // Engine details
+                -0.02, -0.06, 0, // Left engine
+                0.02, -0.06, 0   // Right engine
             ]);
-            triangleGeometry.setAttribute('position', new THREE.BufferAttribute(triangleVertices, 3));
+            
+            const spaceshipIndices = new Uint16Array([
+                0, 1, 2,  // Main triangle
+                1, 3, 2,  // Body
+                1, 4, 3,  // Left engine
+                2, 3, 5   // Right engine
+            ]);
+            
+            spaceshipGeometry.setAttribute('position', new THREE.BufferAttribute(spaceshipVertices, 3));
+            spaceshipGeometry.setIndex(new THREE.BufferAttribute(spaceshipIndices, 1));
 
-            // Random colors
+            // Spaceship colors (different teams)
             const color = new THREE.Color();
-            color.setHSL(0.6 + Math.random() * 0.2, 0.8, 0.7);
+            const team = Math.random() > 0.5 ? 0 : 1; // Two teams
+            if (team === 0) {
+                color.setHSL(0.6, 0.8, 0.7); // Blue team
+            } else {
+                color.setHSL(0.0, 0.8, 0.7); // Red team
+            }
 
             const material = new THREE.MeshBasicMaterial({
                 color: color,
                 transparent: true,
-                opacity: 0.6
+                opacity: 0.8,
+                side: THREE.DoubleSide
             });
 
-            const triangle = new THREE.Mesh(triangleGeometry, material);
+            const spaceship = new THREE.Mesh(spaceshipGeometry, material);
             
             // Random positions
-            triangle.position.set(
-                (Math.random() - 0.5) * 20,
-                (Math.random() - 0.5) * 20,
-                (Math.random() - 0.5) * 20
+            spaceship.position.set(
+                (Math.random() - 0.5) * 15,
+                (Math.random() - 0.5) * 15,
+                (Math.random() - 0.5) * 15
             );
 
             // Random rotation
-            triangle.rotation.set(
+            spaceship.rotation.set(
                 Math.random() * Math.PI * 2,
                 Math.random() * Math.PI * 2,
                 Math.random() * Math.PI * 2
             );
 
-            // Store animation properties
-            triangle.userData = {
-                speed: 0.01 + Math.random() * 0.02, // Faster speed
-                rotationSpeed: 0.02 + Math.random() * 0.03, // Faster rotation
-                floatSpeed: 0.005 + Math.random() * 0.01, // Faster floating
-                originalY: triangle.position.y
+            // Store spaceship properties
+            spaceship.userData = {
+                speed: 0.02 + Math.random() * 0.03,
+                rotationSpeed: 0.01 + Math.random() * 0.02,
+                team: team,
+                health: 100,
+                lastShot: 0,
+                target: null,
+                velocity: new THREE.Vector3(
+                    (Math.random() - 0.5) * 0.1,
+                    (Math.random() - 0.5) * 0.1,
+                    (Math.random() - 0.5) * 0.1
+                )
             };
 
-            this.triangleParticles.push(triangle);
-            this.scene.add(triangle);
+            this.spaceships.push(spaceship);
+            this.scene.add(spaceship);
         }
     }
 
     createGeometry() {
         // Create floating geometric shapes
         this.createFloatingShapes();
+    }
+
+    createLaser(shooter, target) {
+        // Create laser geometry
+        const laserGeometry = new THREE.BufferGeometry();
+        const laserVertices = new Float32Array([
+            0, 0, 0,      // Start point
+            0, 0, -0.3    // End point
+        ]);
+        laserGeometry.setAttribute('position', new THREE.BufferAttribute(laserVertices, 3));
+
+        // Laser color based on team
+        const laserColor = new THREE.Color();
+        if (shooter.userData.team === 0) {
+            laserColor.setHSL(0.6, 1.0, 0.8); // Blue laser
+        } else {
+            laserColor.setHSL(0.0, 1.0, 0.8); // Red laser
+        }
+
+        const laserMaterial = new THREE.LineBasicMaterial({
+            color: laserColor,
+            transparent: true,
+            opacity: 0.9
+        });
+
+        const laser = new THREE.Line(laserGeometry, laserMaterial);
+        
+        // Position laser at shooter
+        laser.position.copy(shooter.position);
+        
+        // Calculate direction to target
+        const direction = new THREE.Vector3();
+        direction.subVectors(target.position, shooter.position).normalize();
+        
+        // Point laser at target
+        laser.lookAt(target.position);
+        
+        // Store laser properties
+        laser.userData = {
+            velocity: direction.multiplyScalar(0.3), // Fast laser speed
+            team: shooter.userData.team,
+            life: 3.0 // 3 seconds lifetime
+        };
+
+        this.lasers.push(laser);
+        this.scene.add(laser);
     }
 
     createFloatingShapes() {
@@ -172,27 +247,74 @@ class ThreeScene {
 
         const time = Date.now() * 0.001;
 
-        // Animate triangle particles (faster paced)
-        if (this.triangleParticles) {
-            this.triangleParticles.forEach((triangle, index) => {
-                // Fast rotation
-                triangle.rotation.x += triangle.userData.rotationSpeed;
-                triangle.rotation.y += triangle.userData.rotationSpeed * 0.7;
-                triangle.rotation.z += triangle.userData.rotationSpeed * 0.5;
+        // Animate spaceships and handle combat
+        if (this.spaceships) {
+            this.spaceships.forEach((spaceship, index) => {
+                // Move spaceship
+                spaceship.position.add(spaceship.userData.velocity);
                 
-                // Fast floating movement
-                triangle.position.y = triangle.userData.originalY + Math.sin(time * 2 + index) * 0.5;
+                // Rotate spaceship
+                spaceship.rotation.x += spaceship.userData.rotationSpeed;
+                spaceship.rotation.y += spaceship.userData.rotationSpeed * 0.7;
+                spaceship.rotation.z += spaceship.userData.rotationSpeed * 0.5;
                 
-                // Fast position drift
-                triangle.position.x += Math.sin(time + index) * triangle.userData.speed;
-                triangle.position.z += Math.cos(time + index) * triangle.userData.speed;
+                // Find nearest enemy
+                let nearestEnemy = null;
+                let nearestDistance = Infinity;
                 
-                // Reset position if it goes too far
-                if (triangle.position.x > 15) triangle.position.x = -15;
-                if (triangle.position.x < -15) triangle.position.x = 15;
-                if (triangle.position.z > 15) triangle.position.z = -15;
-                if (triangle.position.z < -15) triangle.position.z = 15;
+                this.spaceships.forEach((other, otherIndex) => {
+                    if (otherIndex !== index && other.userData.team !== spaceship.userData.team) {
+                        const distance = spaceship.position.distanceTo(other.position);
+                        if (distance < nearestDistance) {
+                            nearestDistance = distance;
+                            nearestEnemy = other;
+                        }
+                    }
+                });
+                
+                spaceship.userData.target = nearestEnemy;
+                
+                // Shoot at target
+                if (nearestEnemy && time - spaceship.userData.lastShot > 1) {
+                    this.createLaser(spaceship, nearestEnemy);
+                    spaceship.userData.lastShot = time;
+                }
+                
+                // Keep spaceships in bounds
+                if (spaceship.position.x > 15) spaceship.position.x = -15;
+                if (spaceship.position.x < -15) spaceship.position.x = 15;
+                if (spaceship.position.y > 15) spaceship.position.y = -15;
+                if (spaceship.position.y < -15) spaceship.position.y = 15;
+                if (spaceship.position.z > 15) spaceship.position.z = -15;
+                if (spaceship.position.z < -15) spaceship.position.z = 15;
             });
+        }
+        
+        // Animate lasers
+        if (this.lasers) {
+            for (let i = this.lasers.length - 1; i >= 0; i--) {
+                const laser = this.lasers[i];
+                laser.position.add(laser.userData.velocity);
+                laser.userData.life -= 0.016; // 60fps
+                
+                // Check for hits
+                this.spaceships.forEach((spaceship) => {
+                    if (spaceship.userData.team !== laser.userData.team) {
+                        const distance = laser.position.distanceTo(spaceship.position);
+                        if (distance < 0.5) {
+                            spaceship.userData.health -= 10;
+                            this.scene.remove(laser);
+                            this.lasers.splice(i, 1);
+                        }
+                    }
+                });
+                
+                // Remove old lasers
+                if (laser.userData.life <= 0) {
+                    this.scene.remove(laser);
+                    this.lasers.splice(i, 1);
+                }
+            }
         }
 
         // Animate floating shapes (slowed down by 75% additional)
