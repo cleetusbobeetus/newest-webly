@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options - Webly Industries</title>
+    <meta name="description" content="Choose your preferred payment method for Webly Industries services">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Critical CSS for performance -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .payment-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 60px;
+        }
+        
+        .payment-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cashapp-btn {
+            background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%);
+            color: white;
+        }
+        
+        .paypal-btn {
+            background: linear-gradient(135deg, #0070ba 0%, #003087 100%);
+            color: white;
+        }
+        
+        .stripe-btn {
+            background: linear-gradient(135deg, #635bff 0%, #4f46e5 100%);
+            color: white;
+        }
+        
+        .contact-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .payment-btn {
+                padding: 1.25rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
+    <!-- Load PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD" defer></script>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Homepage</a>
+        
+        <div class="header">
+            <div class="logo">W</div>
+            <h1>Choose Payment Method</h1>
+            <p class="subtitle">Select your preferred way to pay for Webly Industries services</p>
+        </div>
+        
+        <div class="payment-options">
+            <!-- CashApp Button -->
+            <button class="payment-btn cashapp-btn" onclick="handleCashApp()">
+                <div class="btn-icon">$</div>
+                <span>Pay with Cash App</span>
+            </button>
+            
+            <!-- PayPal Button -->
+            <div class="payment-btn paypal-btn" onclick="handlePayPal()">
+                <div class="btn-icon">P</div>
+                <span>Pay with PayPal</span>
+            </div>
+            
+            <!-- Stripe Button -->
+            <button class="payment-btn stripe-btn" onclick="handleStripe()">
+                <div class="btn-icon">S</div>
+                <span>Pay with Credit Card</span>
+            </button>
+            
+            <!-- Contact Button -->
+            <a href="/#contact" class="payment-btn contact-btn">
+                <div class="btn-icon">📧</div>
+                <span>Contact for Other Options</span>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>All payments are secure and encrypted. Choose the method that works best for you.</p>
+        </div>
+    </div>
+
+    <script>
+        // CashApp redirect function
+        function handleCashApp() {
+            const cashTag = '$YourCashTag'; // Update this with your actual CashTag
+            window.open(`https://cash.app/${cashTag}`, '_blank');
+        }
+
+        // PayPal integration
+        function handlePayPal() {
+            // For now, redirect to contact form with PayPal selected
+            window.location.href = '/#contact';
+            // You can also implement direct PayPal payment here
+        }
+
+        // Stripe checkout
+        function handleStripe() {
+            // For now, redirect to contact form
+            window.location.href = '/#contact';
+            // You can implement Stripe checkout here
+        }
+
+        // Initialize PayPal when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.paypal) {
+                // PayPal is loaded, you can initialize buttons here if needed
+                console.log('PayPal SDK loaded successfully');
+            }
+        });
+    </script>
+</body>
+</html>
