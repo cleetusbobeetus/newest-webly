@@ -57,6 +57,7 @@ class ThreeScene {
         const spaceshipCount = 20; // Fewer but more detailed spaceships
         this.spaceships = [];
         this.lasers = [];
+        this.explosions = [];
         this.lastLaserTime = 0;
 
         for (let i = 0; i < spaceshipCount; i++) {
@@ -186,6 +187,95 @@ class ThreeScene {
         this.scene.add(laser);
     }
 
+    createExplosion(position, type) {
+        // Create explosion geometry
+        const explosionGeometry = new THREE.SphereGeometry(0.1, 8, 6);
+        
+        // Explosion color based on type
+        const explosionColor = new THREE.Color();
+        if (type === 'spaceship') {
+            explosionColor.setHSL(0.1, 1.0, 0.8); // Orange explosion for spaceships
+        } else {
+            explosionColor.setHSL(0.6, 1.0, 0.8); // Blue explosion for objects
+        }
+
+        const explosionMaterial = new THREE.MeshBasicMaterial({
+            color: explosionColor,
+            transparent: true,
+            opacity: 1.0,
+            wireframe: true
+        });
+
+        const explosion = new THREE.Mesh(explosionGeometry, explosionMaterial);
+        explosion.position.copy(position);
+        
+        // Store explosion properties
+        explosion.userData = {
+            life: 1.0, // 1 second lifetime
+            type: type
+        };
+
+        this.explosions.push(explosion);
+        this.scene.add(explosion);
+        
+        // Create particle burst effect
+        this.createExplosionParticles(position, type);
+    }
+
+    createExplosionParticles(position, type) {
+        const particleCount = 15;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particleGeometry = new THREE.SphereGeometry(0.02, 4, 4);
+            
+            const particleColor = new THREE.Color();
+            if (type === 'spaceship') {
+                particleColor.setHSL(0.1 + Math.random() * 0.1, 1.0, 0.7); // Orange particles
+            } else {
+                particleColor.setHSL(0.6 + Math.random() * 0.1, 1.0, 0.7); // Blue particles
+            }
+
+            const particleMaterial = new THREE.MeshBasicMaterial({
+                color: particleColor,
+                transparent: true,
+                opacity: 0.8
+            });
+
+            const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+            particle.position.copy(position);
+            
+            // Random velocity for particles
+            const velocity = new THREE.Vector3(
+                (Math.random() - 0.5) * 0.3,
+                (Math.random() - 0.5) * 0.3,
+                (Math.random() - 0.5) * 0.3
+            );
+            
+            particle.userData = {
+                velocity: velocity,
+                life: 0.8
+            };
+
+            this.scene.add(particle);
+            
+            // Animate particle
+            const animateParticle = () => {
+                particle.position.add(particle.userData.velocity);
+                particle.userData.velocity.multiplyScalar(0.98); // Slow down
+                particle.userData.life -= 0.016;
+                particle.material.opacity = particle.userData.life;
+                
+                if (particle.userData.life > 0) {
+                    requestAnimationFrame(animateParticle);
+                } else {
+                    this.scene.remove(particle);
+                }
+            };
+            
+            animateParticle();
+        }
+    }
+
     createFloatingShapes() {
         const shapes = [];
         const geometries = [
@@ -297,17 +387,38 @@ class ThreeScene {
                 laser.position.add(laser.userData.velocity);
                 laser.userData.life -= 0.016; // 60fps
                 
-                // Check for hits
+                let laserHit = false;
+                
+                // Check for hits with spaceships
                 this.spaceships.forEach((spaceship) => {
                     if (spaceship.userData.team !== laser.userData.team) {
                         const distance = laser.position.distanceTo(spaceship.position);
                         if (distance < 0.5) {
                             spaceship.userData.health -= 10;
-                            this.scene.remove(laser);
-                            this.lasers.splice(i, 1);
+                            this.createExplosion(spaceship.position, 'spaceship');
+                            laserHit = true;
                         }
                     }
                 });
+                
+                // Check for hits with 3D objects
+                if (this.floatingShapes && !laserHit) {
+                    this.floatingShapes.forEach((shape) => {
+                        const distance = laser.position.distanceTo(shape.position);
+                        if (distance < 1.0) { // Larger hit radius for objects
+                            this.createExplosion(shape.position, 'object');
+                            // Make the object flash and shake
+                            shape.userData.hit = true;
+                            shape.userData.hitTime = time;
+                            laserHit = true;
+                        }
+                    });
+                }
+                
+                if (laserHit) {
+                    this.scene.remove(laser);
+                    this.lasers.splice(i, 1);
+                }
                 
                 // Remove old lasers
                 if (laser.userData.life <= 0) {
@@ -320,10 +431,55 @@ class ThreeScene {
         // Animate floating shapes (slowed down by 75% additional)
         if (this.floatingShapes) {
             this.floatingShapes.forEach((shape, index) => {
+                // Normal rotation
                 shape.rotation.x += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
                 shape.rotation.y += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
                 shape.position.y += Math.sin(time + index) * 0.0002; // 0.0009 / 4 (75% slower)
+                
+                // Hit effects
+                if (shape.userData.hit) {
+                    const hitDuration = time - shape.userData.hitTime;
+                    if (hitDuration < 0.5) { // Flash for 0.5 seconds
+                        // Flash effect
+                        const flashIntensity = Math.sin(hitDuration * 20) * 0.5 + 0.5;
+                        shape.material.opacity = 0.3 + flashIntensity * 0.7;
+                        
+                        // Shake effect
+                        shape.position.x += (Math.random() - 0.5) * 0.1;
+                        shape.position.z += (Math.random() - 0.5) * 0.1;
+                        
+                        // Scale effect
+                        const scale = 1 + Math.sin(hitDuration * 15) * 0.2;
+                        shape.scale.setScalar(scale);
+                    } else {
+                        // Reset after hit
+                        shape.userData.hit = false;
+                        shape.material.opacity = 0.3;
+                        shape.scale.setScalar(1);
+                    }
+                }
             });
+        }
+        
+        // Animate explosions
+        if (this.explosions) {
+            for (let i = this.explosions.length - 1; i >= 0; i--) {
+                const explosion = this.explosions[i];
+                explosion.userData.life -= 0.016; // 60fps
+                
+                // Scale explosion
+                const scale = 1 + (1 - explosion.userData.life) * 3;
+                explosion.scale.setScalar(scale);
+                
+                // Fade explosion
+                explosion.material.opacity = explosion.userData.life;
+                
+                // Remove old explosions
+                if (explosion.userData.life <= 0) {
+                    this.scene.remove(explosion);
+                    this.explosions.splice(i, 1);
+                }
+            }
         }
 
 
