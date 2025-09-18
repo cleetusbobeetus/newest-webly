@@ -155,26 +155,26 @@ class ThreeScene {
 
         const time = Date.now() * 0.001;
 
-        // Rotate particles (slowed down by 125%)
+        // Rotate particles (slowed down by 200% total - 75% additional)
         if (this.particles) {
-            this.particles.rotation.x = time * 0.044; // 0.1 / 2.25
-            this.particles.rotation.y = time * 0.089; // 0.2 / 2.25
+            this.particles.rotation.x = time * 0.011; // 0.044 / 4 (75% slower)
+            this.particles.rotation.y = time * 0.022; // 0.089 / 4 (75% slower)
         }
 
-        // Animate floating shapes (slowed down by 125%)
+        // Animate floating shapes (slowed down by 200% total - 75% additional)
         if (this.floatingShapes) {
             this.floatingShapes.forEach((shape, index) => {
-                shape.rotation.x += 0.0044 * (index + 1); // 0.01 / 2.25
-                shape.rotation.y += 0.0044 * (index + 1); // 0.01 / 2.25
-                shape.position.y += Math.sin(time + index) * 0.0009; // 0.002 / 2.25
+                shape.rotation.x += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
+                shape.rotation.y += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
+                shape.position.y += Math.sin(time + index) * 0.0002; // 0.0009 / 4 (75% slower)
             });
         }
 
 
-        // Camera movement based on mouse
+        // Camera movement based on mouse (slowed down by 75%)
         if (this.camera) {
-            this.camera.position.x += (this.mouse.x * 0.5 - this.camera.position.x) * 0.05;
-            this.camera.position.y += (this.mouse.y * 0.5 - this.camera.position.y) * 0.05;
+            this.camera.position.x += (this.mouse.x * 0.5 - this.camera.position.x) * 0.0125; // 0.05 / 4 (75% slower)
+            this.camera.position.y += (this.mouse.y * 0.5 - this.camera.position.y) * 0.0125; // 0.05 / 4 (75% slower)
             this.camera.lookAt(this.scene.position);
         }
 

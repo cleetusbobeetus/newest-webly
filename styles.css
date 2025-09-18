@@ -48,7 +48,7 @@ body {
     border: 3px solid var(--primary);
     border-radius: 50%;
     border-top: 3px solid transparent;
-    animation: spin 1s linear infinite;
+    animation: spin 4s linear infinite;
     margin-bottom: 20px;
 }
 
@@ -1211,7 +1211,7 @@ img {
     color: var(--primary);
     font-weight: bold;
     margin: 0 1rem;
-    animation: pulse 2s infinite;
+    animation: pulse 8s infinite;
 }
 
 @keyframes pulse {
@@ -1494,7 +1494,7 @@ img {
     background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
     border-radius: 20px;
     z-index: -1;
-    animation: launchGlow 2s ease-in-out infinite alternate;
+    animation: launchGlow 8s ease-in-out infinite alternate;
     opacity: 0.8;
 }
 
