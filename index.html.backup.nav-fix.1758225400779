@@ -135,27 +135,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     
     <link rel="stylesheet" href="styles.css">
-
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-            
-            /* Enhanced smooth scrolling for better UX */
-            @media (prefers-reduced-motion: no-preference) {
-                html {
-                    scroll-behavior: smooth;
-                }
-            }
-            
-            /* Respect user's motion preferences */
-            @media (prefers-reduced-motion: reduce) {
-                html {
-                    scroll-behavior: auto;
-                }
-            }
-        </style>
-        </head>
+</head>
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
