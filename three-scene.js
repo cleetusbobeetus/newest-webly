@@ -155,13 +155,13 @@ class ThreeScene {
 
         const time = Date.now() * 0.001;
 
-        // Rotate particles (slowed down by 200% total - 75% additional)
+        // Rotate particles (slowed down by 75% additional)
         if (this.particles) {
             this.particles.rotation.x = time * 0.011; // 0.044 / 4 (75% slower)
             this.particles.rotation.y = time * 0.022; // 0.089 / 4 (75% slower)
         }
 
-        // Animate floating shapes (slowed down by 200% total - 75% additional)
+        // Animate floating shapes (slowed down by 75% additional)
         if (this.floatingShapes) {
             this.floatingShapes.forEach((shape, index) => {
                 shape.rotation.x += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
@@ -171,10 +171,10 @@ class ThreeScene {
         }
 
 
-        // Camera movement based on mouse (slowed down by 75%)
+        // Camera movement based on mouse
         if (this.camera) {
-            this.camera.position.x += (this.mouse.x * 0.5 - this.camera.position.x) * 0.0125; // 0.05 / 4 (75% slower)
-            this.camera.position.y += (this.mouse.y * 0.5 - this.camera.position.y) * 0.0125; // 0.05 / 4 (75% slower)
+            this.camera.position.x += (this.mouse.x * 0.5 - this.camera.position.x) * 0.05;
+            this.camera.position.y += (this.mouse.y * 0.5 - this.camera.position.y) * 0.05;
             this.camera.lookAt(this.scene.position);
         }
 
