@@ -126,7 +126,7 @@
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
         .logo { font-size: 1.8rem; font-weight: 800; z-index: 1001; display: flex; align-items: center; }
         .logo a { display: flex; align-items: center; text-decoration: none; gap: 1rem; }
-        .logo-image { height: 112px; width: 112px; object-fit: contain; border-radius: 50%; }
+        .logo-image { height: 112px; width: 112px; object-fit: contain; border-radius: 50%; background: rgba(255, 255, 255, 0.1); padding: 8px; }
         .logo-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800; }
         .nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
         .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
@@ -137,7 +137,7 @@
         .hero-subtitle { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; line-height: 1.6; }
         .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin: 0.5rem; transition: transform 0.3s ease; }
         .btn-secondary { background: transparent; color: white; padding: 1rem 2rem; border: 2px solid white; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin: 0.5rem; transition: all 0.3s ease; }
-        @media (max-width: 768px) { .hero-title { font-size: 2rem; } .hero-subtitle { font-size: 1rem; } .nav-links { display: none; } .logo-image { height: 60px; width: 60px; } .logo-text { font-size: 1.4rem; } }
+        @media (max-width: 768px) { .hero-title { font-size: 2rem; } .hero-subtitle { font-size: 1rem; } .nav-links { display: none; } .logo-image { height: 60px; width: 60px; padding: 4px; } .logo-text { font-size: 1.4rem; } }
     </style>
 
     <!-- External Libraries - Load asynchronously for performance -->
@@ -161,7 +161,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="#home">
-                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <img src="Public/Images/webly-logo-new.svg" alt="Webly Industries" class="logo-image">
                     <span class="logo-text">Webly Industries</span>
                 </a>
             </div>
