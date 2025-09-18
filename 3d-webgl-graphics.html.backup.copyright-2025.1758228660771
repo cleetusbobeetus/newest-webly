@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Advanced Analytics for Websites | Webly Industries - Real-Time Data Insights</title>
-    <meta name="title" content="Advanced Analytics for Websites | Webly Industries - Real-Time Data Insights">
-    <meta name="description" content="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates. Advanced website analytics starting at $300/month.">
-    <meta name="keywords" content="website analytics, user behavior tracking, conversion optimization, real-time analytics, data insights, web analytics, business intelligence, performance metrics">
+    <title>3D WebGL Graphics for Websites | Webly Industries - Stunning 3D Visualizations</title>
+    <meta name="title" content="3D WebGL Graphics for Websites | Webly Industries - Stunning 3D Visualizations">
+    <meta name="description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert. Professional 3D web development starting at $300/month.">
+    <meta name="keywords" content="3D WebGL graphics, Three.js development, 3D website design, WebGL animations, interactive 3D elements, 3D web development, immersive web experiences, 3D graphics programming">
     <meta name="author" content="Zane LaFaver - Webly Industries">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -16,28 +16,28 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://weblyindustries.com/advanced-analytics.html">
-    <meta property="og:title" content="Advanced Analytics for Websites | Webly Industries">
-    <meta property="og:description" content="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates.">
-    <meta property="og:image" content="https://weblyindustries.com/images/advanced-analytics-og.jpg">
+    <meta property="og:url" content="https://weblyindustries.com/3d-webgl-graphics.html">
+    <meta property="og:title" content="3D WebGL Graphics for Websites | Webly Industries">
+    <meta property="og:description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert.">
+    <meta property="og:image" content="https://weblyindustries.com/images/3d-webgl-graphics-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Advanced Analytics for Websites - Webly Industries">
+    <meta property="og:image:alt" content="3D WebGL Graphics for Websites - Webly Industries">
     <meta property="og:site_name" content="Webly Industries">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://weblyindustries.com/advanced-analytics.html">
-    <meta property="twitter:title" content="Advanced Analytics for Websites | Webly Industries">
-    <meta property="twitter:description" content="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates.">
-    <meta property="twitter:image" content="https://weblyindustries.com/images/advanced-analytics-twitter.jpg">
-    <meta property="twitter:image:alt" content="Advanced Analytics for Websites">
+    <meta property="twitter:url" content="https://weblyindustries.com/3d-webgl-graphics.html">
+    <meta property="twitter:title" content="3D WebGL Graphics for Websites | Webly Industries">
+    <meta property="twitter:description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/3d-webgl-graphics-twitter.jpg">
+    <meta property="twitter:image:alt" content="3D WebGL Graphics for Websites">
     <meta property="twitter:creator" content="@WeblyIndustries">
     <meta property="twitter:site" content="@WeblyIndustries">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://weblyindustries.com/advanced-analytics.html">
+    <link rel="canonical" href="https://weblyindustries.com/3d-webgl-graphics.html">
     
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,9 +179,9 @@
         </div>
         <div class="hero-content">
             <a href="index.html#features" class="back-to-features">← Back to Features</a>
-            <div class="service-icon" data-icon="📊">📊</div>
-            <h1 class="hero-title" data-title="Advanced Analytics">Advanced Analytics</h1>
-            <p class="hero-subtitle" data-subtitle="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates and drive business growth">Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates and drive business growth</p>
+            <div class="service-icon" data-icon="🎨">🎨</div>
+            <h1 class="hero-title" data-title="3D WebGL Graphics">3D WebGL Graphics</h1>
+            <p class="hero-subtitle" data-subtitle="Create stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences that captivate and convert">Create stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences that captivate and convert</p>
             <div class="hero-cta">
                 <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
                 <a href="index.html#features" class="btn-secondary">Explore Features</a>
@@ -193,108 +193,107 @@
     <section class="service-details">
         <div class="container">
             <div class="service-content">
-                <h2>Data-Driven Decisions That Drive Results</h2>
-                <p class="lead">At Webly Industries, we transform raw website data into actionable insights that help you understand your users, optimize your conversion funnel, and make informed business decisions. Our advanced analytics platform combines real-time tracking, AI-powered insights, and comprehensive reporting to give you the competitive edge you need.</p>
+                <h2>Bring Your Website to Life with 3D WebGL Graphics</h2>
+                <p class="lead">At Webly Industries, we specialize in creating breathtaking 3D web experiences using cutting-edge WebGL technology and Three.js. Our 3D graphics solutions transform ordinary websites into immersive, interactive experiences that engage users and drive conversions.</p>
                 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <div class="feature-icon">📈</div>
-                        <h3>Real-Time Tracking</h3>
-                        <p>Live monitoring of user behavior, page views, and conversions with instant updates and alerts for important events and trends.</p>
-                    </div>
-                    
-                    <div class="feature-item">
                         <div class="feature-icon">🎯</div>
-                        <h3>Conversion Funnel Analysis</h3>
-                        <p>Detailed tracking of user journeys from first visit to conversion, identifying drop-off points and optimization opportunities.</p>
+                        <h3>Interactive 3D Models</h3>
+                        <p>Custom 3D models that users can rotate, zoom, and interact with in real-time. Perfect for product showcases, architectural visualizations, and educational content.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">🤖</div>
-                        <h3>AI-Powered Insights</h3>
-                        <p>Machine learning algorithms that analyze patterns, predict user behavior, and provide actionable recommendations for improvement.</p>
+                        <div class="feature-icon">✨</div>
+                        <h3>Particle Systems</h3>
+                        <p>Dynamic particle effects that create stunning visual impact. From floating particles to complex simulations, we bring your ideas to life with fluid, responsive animations.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🌊</div>
+                        <h3>Fluid Animations</h3>
+                        <p>Smooth, 60fps animations that respond to user interactions. Our WebGL implementations ensure buttery-smooth performance across all devices and browsers.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Interactive Scenes</h3>
+                        <p>Immersive 3D environments that users can explore and interact with. Create engaging experiences that keep visitors on your site longer.</p>
                     </div>
                     
                     <div class="feature-item">
                         <div class="feature-icon">📱</div>
-                        <h3>Cross-Device Tracking</h3>
-                        <p>Comprehensive user journey tracking across desktop, mobile, and tablet devices to understand complete customer behavior.</p>
+                        <h3>Mobile Optimized</h3>
+                        <p>Responsive 3D graphics that work seamlessly on mobile devices. Touch controls and optimized performance for the best mobile experience.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">🔍</div>
-                        <h3>Heatmap Analysis</h3>
-                        <p>Visual heatmaps showing where users click, scroll, and spend time on your pages to optimize layout and content placement.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">📊</div>
-                        <h3>Custom Dashboards</h3>
-                        <p>Personalized analytics dashboards with key metrics, KPIs, and reports tailored to your business goals and objectives.</p>
+                        <div class="feature-icon">⚡</div>
+                        <h3>Performance Optimized</h3>
+                        <p>Lightweight, efficient 3D implementations that load fast and run smoothly. We optimize for performance without sacrificing visual quality.</p>
                     </div>
                 </div>
 
-                <div class="analytics-features">
-                    <h3>Comprehensive Analytics Features</h3>
-                    <div class="analytics-grid">
-                        <div class="analytics-item">
-                            <h4>User Behavior Analysis</h4>
-                            <p>Track user interactions, session duration, bounce rates, and engagement metrics to understand user preferences</p>
+                <div class="technology-section">
+                    <h3>Advanced 3D Technologies We Use</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>WebGL 2.0</h4>
+                            <p>Latest WebGL standard for maximum performance and visual quality</p>
                         </div>
-                        <div class="analytics-item">
-                            <h4>E-commerce Tracking</h4>
-                            <p>Monitor sales, revenue, product performance, and shopping cart abandonment with detailed transaction analytics</p>
+                        <div class="tech-item">
+                            <h4>Three.js</h4>
+                            <p>Industry-leading 3D library for web development</p>
                         </div>
-                        <div class="analytics-item">
-                            <h4>Content Performance</h4>
-                            <p>Analyze which content performs best, track engagement rates, and identify high-converting content strategies</p>
+                        <div class="tech-item">
+                            <h4>GLSL Shaders</h4>
+                            <p>Custom shaders for unique visual effects and materials</p>
                         </div>
-                        <div class="analytics-item">
-                            <h4>Traffic Sources</h4>
-                            <p>Monitor organic search, paid advertising, social media, and referral traffic to optimize marketing spend</p>
+                        <div class="tech-item">
+                            <h4>GSAP Animations</h4>
+                            <p>Professional-grade animations and timeline controls</p>
                         </div>
-                        <div class="analytics-item">
-                            <h4>Goal Tracking</h4>
-                            <p>Set and monitor custom goals, conversions, and events to measure success and ROI</p>
+                        <div class="tech-item">
+                            <h4>Physics Engines</h4>
+                            <p>Realistic physics simulations for interactive elements</p>
                         </div>
-                        <div class="analytics-item">
-                            <h4>Segmentation</h4>
-                            <p>Create user segments based on demographics, behavior, and preferences for targeted analysis</p>
+                        <div class="tech-item">
+                            <h4>Post-Processing</h4>
+                            <p>Advanced effects like bloom, SSAO, and color grading</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="ai-insights">
-                    <h3>AI-Powered Business Intelligence</h3>
-                    <div class="ai-features-grid">
-                        <div class="ai-feature-item">
-                            <h4>Predictive Analytics</h4>
-                            <p>Forecast future trends, user behavior, and conversion rates using advanced machine learning models</p>
+                <div class="use-cases-section">
+                    <h3>Perfect for These Industries</h3>
+                    <div class="use-cases-grid">
+                        <div class="use-case-item">
+                            <h4>E-commerce</h4>
+                            <p>3D product viewers, virtual try-ons, and interactive catalogs</p>
                         </div>
-                        <div class="ai-feature-item">
-                            <h4>Anomaly Detection</h4>
-                            <p>Automatically identify unusual patterns, traffic spikes, or performance issues that require attention</p>
+                        <div class="use-case-item">
+                            <h4>Real Estate</h4>
+                            <p>Virtual property tours, architectural visualizations, and 3D floor plans</p>
                         </div>
-                        <div class="ai-feature-item">
-                            <h4>Smart Recommendations</h4>
-                            <p>AI-generated suggestions for improving conversion rates, user experience, and content optimization</p>
+                        <div class="use-case-item">
+                            <h4>Education</h4>
+                            <p>Interactive learning experiences, 3D models, and simulations</p>
                         </div>
-                        <div class="ai-feature-item">
-                            <h4>Automated Reporting</h4>
-                            <p>Intelligent reports that highlight key insights, trends, and actionable recommendations</p>
+                        <div class="use-case-item">
+                            <h4>Gaming</h4>
+                            <p>Browser-based games, interactive experiences, and 3D interfaces</p>
                         </div>
-                        <div class="ai-feature-item">
-                            <h4>Customer Lifetime Value</h4>
-                            <p>Predict and track customer lifetime value to optimize acquisition and retention strategies</p>
+                        <div class="use-case-item">
+                            <h4>Architecture</h4>
+                            <p>Building visualizations, interior design, and construction planning</p>
                         </div>
-                        <div class="ai-feature-item">
-                            <h4>Churn Prediction</h4>
-                            <p>Identify users at risk of churning and recommend retention strategies to improve customer loyalty</p>
+                        <div class="use-case-item">
+                            <h4>Entertainment</h4>
+                            <p>Interactive media, virtual experiences, and creative showcases</p>
                         </div>
                     </div>
                 </div>
 
-                
                 <div class="pricing-section">
                     <h3>Flexible Pricing Plans</h3>
                     <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
@@ -378,13 +377,12 @@
                 </div>
                 </div>
                 </div>
-                </div>
 
                 <div class="cta-section">
-                    <h3>Ready to Unlock Your Data's Potential?</h3>
-                    <p>Stop guessing what your users want. Our advanced analytics will show you exactly how to optimize your website for maximum conversions and growth.</p>
+                    <h3>Ready to Create Stunning 3D Experiences?</h3>
+                    <p>Transform your website with cutting-edge 3D WebGL graphics that captivate your audience and set you apart from the competition.</p>
                     <div class="cta-buttons">
-                        <a href="index.html#contact" class="btn-primary">Get Free Analytics Audit</a>
+                        <a href="index.html#contact" class="btn-primary">Get Free 3D Consultation</a>
                         <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
                     </div>
                 </div>
@@ -395,13 +393,13 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Ready to Get Advanced Analytics?</h2>
-            <p class="section-subtitle">Let's discuss how advanced analytics can optimize your website</p>
+            <h2 class="section-title">Ready to Get Started with 3D Graphics?</h2>
+            <p class="section-subtitle">Let's discuss how 3D WebGL graphics can transform your website</p>
             
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p>Ready to unlock the power of your website data? Contact us to discuss your analytics needs and get a free consultation.</p>
+                    <p>Ready to create stunning 3D experiences? Contact us to discuss your project and get a free consultation.</p>
                     
                     <div class="contact-details">
                         <h4>Contact Information</h4>
@@ -432,18 +430,18 @@
                             <label for="service">Service Interest</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="analytics-basic">Basic Analytics</option>
-                                <option value="analytics-professional">Professional Analytics</option>
-                                <option value="consultation">Free Analytics Audit</option>
+                                <option value="3d-basic">Basic 3D Package</option>
+                                <option value="3d-professional">Professional 3D Package</option>
+                                <option value="consultation">Free 3D Consultation</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your analytics requirements..."></textarea>
+                            <textarea id="message" name="message" placeholder="Tell us about your 3D graphics requirements and vision..."></textarea>
                         </div>
                         
-                        <input type="hidden" name="_subject" value="📊 ADVANCED ANALYTICS INQUIRY - Webly Industries">
+                        <input type="hidden" name="_subject" value="🎨 3D WEBGL GRAPHICS INQUIRY - Webly Industries">
                         <input type="hidden" name="_replyto" value="">
                         <input type="hidden" name="_next" value="?success=true">
                         
@@ -464,7 +462,7 @@
                 <a href="index.html#contact">Contact</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Webly Industries LLC. All rights reserved. | Built with advanced analytics</p>
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built with cutting-edge 3D technology</p>
             </div>
         </div>
     </footer>
@@ -474,9 +472,9 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Advanced Analytics Service",
-        "name": "Advanced Analytics",
-        "description": "Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates and drive business growth.",
+        "serviceType": "3D WebGL Graphics Service",
+        "name": "3D WebGL Graphics",
+        "description": "Stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences.",
         "provider": {
             "@type": "Organization",
             "name": "Webly Industries",
@@ -488,22 +486,22 @@
                 "email": "ZaneLaFaver@gmail.com"
             }
         },
-        "url": "https://weblyindustries.com/advanced-analytics.html",
+        "url": "https://weblyindustries.com/3d-webgl-graphics.html",
         "offers": [
             {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "AI-Powered Insights",
-                        "description": "Machine learning algorithms for predictive analytics"
+                        "name": "Particle Systems",
+                        "description": "Dynamic particle effects for stunning visual impact"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Conversion Funnel Analysis",
-                        "description": "Detailed tracking of user journeys and optimization"
+                        "name": "Fluid Animations",
+                        "description": "Smooth, 60fps animations that respond to user interactions"
                     }
                 }
             ]
