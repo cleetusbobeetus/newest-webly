@@ -72,7 +72,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.25rem 2rem;
+  padding: 0.05rem 2rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(99, 102, 241, 0.1);
@@ -99,7 +99,7 @@ body {
 
 /* Modern Logo Design */
 .logo {
-  font-size: 1.8rem;
+  font-size: 2.81rem;
   font-weight: 800;
   z-index: 1001;
   display: flex;
@@ -141,8 +141,8 @@ body {
 }
 
 .logo-image {
-  height: 112px;
-  width: 112px;
+  height: 175px;
+  width: 175px;
   object-fit: contain;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: none;
@@ -178,7 +178,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 1.8rem;
+  font-size: 2.81rem;
   font-weight: 800;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.02em;
@@ -478,7 +478,7 @@ body {
   }
   
   .navbar {
-    padding: 0.25rem 1rem;
+    padding: 0.05rem 1rem;
   }
   
   .logo a {
@@ -486,13 +486,13 @@ body {
   }
   
   .logo-image {
-    height: 102px;
-    width: 102px;
+    height: 160px;
+    width: 160px;
     padding: 0;
   }
   
   .logo-text {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
   
   /* Service page responsive styles */
@@ -534,13 +534,13 @@ body {
 
 @media (max-width: 480px) {
   .logo-image {
-    height: 90px;
-    width: 90px;
+    height: 141px;
+    width: 141px;
     padding: 0;
   }
   
   .logo-text {
-    font-size: 1.4rem;
+    font-size: 2.19rem;
   }
   
   .mobile-nav-links a {
@@ -554,7 +554,7 @@ body {
   }
   
   .navbar {
-    padding: 0.19rem 0.75rem;
+    padding: 0.05rem 0.75rem;
   }
 }
 
@@ -1364,7 +1364,7 @@ body {
 }
 
 .pricing-title {
-    font-size: 1.8rem;
+    font-size: 2.81rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--light);
