@@ -407,6 +407,20 @@ class ThreeScene {
                         const distance = laser.position.distanceTo(shape.position);
                         if (distance < 1.0) { // Larger hit radius for objects
                             this.createExplosion(shape.position, 'object');
+                            
+                            // Calculate push direction from laser to shape
+                            const pushDirection = new THREE.Vector3();
+                            pushDirection.subVectors(shape.position, laser.position).normalize();
+                            
+                            // Add push velocity to the shape
+                            if (!shape.userData.velocity) {
+                                shape.userData.velocity = new THREE.Vector3(0, 0, 0);
+                            }
+                            
+                            // Apply push force (stronger push)
+                            const pushForce = 0.15;
+                            shape.userData.velocity.add(pushDirection.multiplyScalar(pushForce));
+                            
                             // Make the object flash and shake
                             shape.userData.hit = true;
                             shape.userData.hitTime = time;
@@ -431,6 +445,17 @@ class ThreeScene {
         // Animate floating shapes (slowed down by 75% additional)
         if (this.floatingShapes) {
             this.floatingShapes.forEach((shape, index) => {
+                // Initialize velocity if not exists
+                if (!shape.userData.velocity) {
+                    shape.userData.velocity = new THREE.Vector3(0, 0, 0);
+                }
+                
+                // Apply velocity (physics movement)
+                shape.position.add(shape.userData.velocity);
+                
+                // Apply friction to slow down over time
+                shape.userData.velocity.multiplyScalar(0.98);
+                
                 // Normal rotation
                 shape.rotation.x += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
                 shape.rotation.y += 0.0011 * (index + 1); // 0.0044 / 4 (75% slower)
@@ -444,9 +469,9 @@ class ThreeScene {
                         const flashIntensity = Math.sin(hitDuration * 20) * 0.5 + 0.5;
                         shape.material.opacity = 0.3 + flashIntensity * 0.7;
                         
-                        // Shake effect
-                        shape.position.x += (Math.random() - 0.5) * 0.1;
-                        shape.position.z += (Math.random() - 0.5) * 0.1;
+                        // Shake effect (reduced since we have push physics now)
+                        shape.position.x += (Math.random() - 0.5) * 0.05;
+                        shape.position.z += (Math.random() - 0.5) * 0.05;
                         
                         // Scale effect
                         const scale = 1 + Math.sin(hitDuration * 15) * 0.2;
@@ -457,6 +482,32 @@ class ThreeScene {
                         shape.material.opacity = 0.3;
                         shape.scale.setScalar(1);
                     }
+                }
+                
+                // Keep shapes in bounds (with some bounce effect)
+                if (shape.position.x > 15) {
+                    shape.position.x = 15;
+                    shape.userData.velocity.x *= -0.5; // Bounce back
+                }
+                if (shape.position.x < -15) {
+                    shape.position.x = -15;
+                    shape.userData.velocity.x *= -0.5; // Bounce back
+                }
+                if (shape.position.y > 15) {
+                    shape.position.y = 15;
+                    shape.userData.velocity.y *= -0.5; // Bounce back
+                }
+                if (shape.position.y < -15) {
+                    shape.position.y = -15;
+                    shape.userData.velocity.y *= -0.5; // Bounce back
+                }
+                if (shape.position.z > 15) {
+                    shape.position.z = 15;
+                    shape.userData.velocity.z *= -0.5; // Bounce back
+                }
+                if (shape.position.z < -15) {
+                    shape.position.z = -15;
+                    shape.userData.velocity.z *= -0.5; // Bounce back
                 }
             });
         }
