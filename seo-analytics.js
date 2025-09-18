@@ -304,8 +304,8 @@ class SEOAnalytics {
             // Track pricing page views
             this.trackPricingPageViews();
             
-            // Track payment initiations
-            this.trackPaymentInitiations();
+            // Track contact initiations
+            this.trackContactInitiations();
         }
     }
 
@@ -341,14 +341,14 @@ class SEOAnalytics {
         }
     }
 
-    trackPaymentInitiations() {
-        const paymentButtons = document.querySelectorAll('.btn-payment, .btn-primary');
+    trackContactInitiations() {
+        const contactButtons = document.querySelectorAll('.btn-primary');
         
-        paymentButtons.forEach(button => {
+        contactButtons.forEach(button => {
             button.addEventListener('click', () => {
-                gtag('event', 'payment_initiation', {
+                gtag('event', 'contact_initiation', {
                     event_category: 'conversion',
-                    event_label: 'payment_button_clicked',
+                    event_label: 'contact_button_clicked',
                     value: 1
                 });
             });

@@ -60,7 +60,12 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="index.html">Webly Industries</a></div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <span class="logo-text">Webly Industries</span>
+                </a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#features">Features</a></li>
@@ -72,20 +77,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero service-hero">
+    <section class="hero service-hero" id="home">
         <div class="hero-bg">
             <canvas id="heroCanvas"></canvas>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
         </div>
         <div class="hero-content">
-            <div class="service-icon">📱</div>
-            <h1 class="hero-title">Mobile-First Design</h1>
-            <p class="hero-subtitle">Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience</p>
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon" data-icon="📱">📱</div>
+            <h1 class="hero-title" data-title="Mobile-First Design">Mobile-First Design</h1>
+            <p class="hero-subtitle" data-subtitle="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience">Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience</p>
             <div class="hero-cta">
                 <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
-                <a href="index.html#contact" class="btn-secondary">Get Free Consultation</a>
+                <a href="index.html#features" class="btn-secondary">Explore Features</a>
             </div>
         </div>
     </section>
@@ -412,8 +415,6 @@
     </script>
 
     <!-- Scripts -->
-    <script src="stripe-config.js"></script>
-    <script src="stripe-payments.js"></script>
     <script src="email-service.js"></script>
     <script src="seo-analytics.js"></script>
     <script src="script.js"></script>

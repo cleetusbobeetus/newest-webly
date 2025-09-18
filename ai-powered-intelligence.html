@@ -200,6 +200,19 @@
             padding: 1.5rem;
         }
         
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+        
         .benefit-item h4,
         .tech-item h4 {
             font-size: 1.2rem;
@@ -483,20 +496,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero service-hero">
+    <section class="hero service-hero" id="home">
         <div class="hero-bg">
             <canvas id="heroCanvas"></canvas>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
         </div>
         <div class="hero-content">
-            <div class="service-icon">🚀</div>
-            <h1 class="hero-title">AI-Powered Intelligence for Websites</h1>
-            <p class="hero-subtitle">Transform your website with advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support</p>
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon" data-icon="🚀">🚀</div>
+            <h1 class="hero-title" data-title="AI-Powered Intelligence for Websites">AI-Powered Intelligence for Websites</h1>
+            <p class="hero-subtitle" data-subtitle="Transform your website with advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support">Transform your website with advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support</p>
             <div class="hero-cta">
                 <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
-                <a href="index.html#contact" class="btn-secondary">Get Free Consultation</a>
+                <a href="index.html#features" class="btn-secondary">Explore Features</a>
             </div>
         </div>
     </section>
@@ -548,18 +559,22 @@
                 <h3>Why Choose AI-Powered Intelligence?</h3>
                 <div class="benefits-grid">
                     <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
                         <h4>Increased Engagement</h4>
                         <p>Personalized experiences keep users engaged longer and coming back for more.</p>
                     </div>
                     <div class="benefit-item">
+                        <div class="benefit-icon">📈</div>
                         <h4>Higher Conversions</h4>
                         <p>AI-optimized user journeys lead to significantly higher conversion rates.</p>
                     </div>
                     <div class="benefit-item">
+                        <div class="benefit-icon">🤖</div>
                         <h4>24/7 Customer Support</h4>
                         <p>Intelligent chatbots provide instant support without human intervention.</p>
                     </div>
                     <div class="benefit-item">
+                        <div class="benefit-icon">🧠</div>
                         <h4>Data-Driven Insights</h4>
                         <p>Advanced analytics help you understand and optimize user behavior.</p>
                     </div>
@@ -764,8 +779,6 @@
     </script>
 
     <!-- Scripts -->
-    <script src="stripe-config.js"></script>
-    <script src="stripe-payments.js"></script>
     <script src="email-service.js"></script>
     <script src="seo-analytics.js"></script>
     <script src="script.js"></script>

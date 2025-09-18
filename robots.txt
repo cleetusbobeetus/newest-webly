@@ -21,8 +21,6 @@ Allow: /admin-styles.css
 Allow: /script.js
 Allow: /admin-script.js
 Allow: /three-scene.js
-Allow: /stripe-payments.js
-Allow: /stripe-config.js
 Allow: /email-service.js
 
 # Allow access to images and assets
