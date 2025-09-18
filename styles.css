@@ -97,6 +97,34 @@ body {
   position: relative;
 }
 
+/* Mobile-First Performance Optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Critical Resource Loading */
+img {
+  max-width: 100%;
+  height: auto;
+  loading: lazy;
+}
+
 /* Modern Logo Design */
 .logo {
   font-size: 1.8rem;
@@ -1748,4 +1776,78 @@ select option {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
+}
+
+/* PayPal Payment Styling */
+.payment-note {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+#paypal-button-container {
+  margin: 1rem 0;
+  min-height: 50px;
+}
+
+#paypal-button-container .paypal-button {
+  border-radius: 8px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Enhanced Mobile Performance */
+@media (max-width: 768px) {
+  /* Mobile form optimizations */
+  .contact-form {
+    padding: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  /* Mobile payment method styling */
+  #payment-method {
+    background: white;
+    border: 2px solid #e5e7eb;
+    transition: border-color 0.3s ease;
+  }
+  
+  #payment-method:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+  
+  /* Mobile performance optimizations */
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  /* Reduce animations on mobile for better performance */
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
