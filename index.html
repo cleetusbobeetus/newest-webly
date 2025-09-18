@@ -109,9 +109,24 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
-    <!-- Fonts -->
+    <!-- Fonts with enhanced 4K rendering -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font display optimization for crisp rendering -->
+    <style>
+        /* Enhanced font rendering for pricing text */
+        .pricing-price {
+            font-variant-ligatures: common-ligatures;
+            font-variant-numeric: tabular-nums;
+            font-optical-sizing: auto;
+        }
+        
+        /* Ensure Inter font loads with optimal rendering */
+        body {
+            font-display: swap;
+        }
+    </style>
     
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -326,22 +341,6 @@
                     <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
                 
-                <div class="pricing-card fade-in">
-                    <h3 class="pricing-title">Enterprise</h3>
-                    <div class="pricing-price">$19,999</div>
-                    <div class="pricing-period">or $999/month for 24 months</div>
-                    <ul class="pricing-features">
-                        <li>Unlimited Pages</li>
-                        <li>Custom WebGL Applications</li>
-                        <li>Advanced AI Integration</li>
-                        <li>Multi-language Support</li>
-                        <li>Custom API Development</li>
-                        <li>24/7 Priority Support</li>
-                        <li>White-label Solutions</li>
-                        <li>Custom Training</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary">Get Started</a>
-                </div>
             </div>
         </div>
     </section>
@@ -399,7 +398,6 @@
                             <option value="">Select a service</option>
                             <option value="starter">Starter Package</option>
                             <option value="professional">Professional Package</option>
-                            <option value="enterprise">Enterprise Package</option>
                             <option value="maintenance">Monthly Maintenance</option>
                             <option value="consultation">Free Consultation</option>
                         </select>
@@ -540,16 +538,6 @@
                         "description": "15-page advanced website with 3D graphics and AI features"
                     },
                     "price": "7999",
-                    "priceCurrency": "USD"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Enterprise Package",
-                        "description": "Unlimited pages with custom WebGL applications and AI integration"
-                    },
-                    "price": "19999",
                     "priceCurrency": "USD"
                 }
             ]

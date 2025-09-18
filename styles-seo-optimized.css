@@ -1,0 +1,671 @@
+/*!
+ * Webly Industries - SEO Optimized CSS Framework
+ * Version: 2.0.0
+ * Author: Zane LaFaver - Webly Industries
+ * Description: High-performance, SEO-optimized CSS with critical path optimization
+ * License: MIT
+ * Last Updated: January 2025
+ */
+
+/* ==========================================================================
+   CRITICAL CSS - Above the Fold (Inline for Performance)
+   ========================================================================== */
+
+/* CSS Custom Properties - Optimized for Performance */
+:root {
+    /* Brand Colors - Optimized for Accessibility */
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    --secondary: #ec4899;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    
+    /* Neutral Colors - WCAG AA Compliant */
+    --dark: #0f172a;
+    --darker: #020617;
+    --light: #f8fafc;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    
+    /* Performance Gradients - Hardware Accelerated */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-success: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+    
+    /* Typography Scale - Optimized for Readability */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    --font-size-5xl: 3rem;      /* 48px */
+    --font-size-6xl: 3.75rem;   /* 60px */
+    
+    /* Spacing Scale - Consistent Design System */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+    --space-16: 4rem;     /* 64px */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px */
+    
+    /* Border Radius - Consistent Design Language */
+    --radius-sm: 0.375rem;   /* 6px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.5rem;    /* 24px */
+    --radius-full: 9999px;   /* Fully rounded */
+    
+    /* Shadows - Performance Optimized */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* Transitions - Hardware Accelerated */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Z-Index Scale - Organized Layering */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-toast: 1080;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES - Performance Optimized
+   ========================================================================== */
+
+/* Modern CSS Reset - Minimal and Performance Focused */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* HTML5 Display Definitions */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+/* Base Typography - SEO Optimized */
+html {
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--light);
+    background-color: var(--darker);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY - SEO & Accessibility Optimized
+   ========================================================================== */
+
+/* Heading Hierarchy - SEO Structured */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+    color: var(--light);
+}
+
+h1 {
+    font-size: var(--font-size-5xl);
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+}
+
+h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+}
+
+h5 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+h6 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+/* Paragraph Styles - Readability Optimized */
+p {
+    margin-bottom: var(--space-4);
+    color: var(--gray-300);
+    line-height: 1.7;
+}
+
+/* Links - SEO & UX Optimized */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Lists - Accessibility Optimized */
+ul, ol {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+}
+
+li {
+    margin-bottom: var(--space-2);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   LAYOUT COMPONENTS - Performance Optimized
+   ========================================================================== */
+
+/* Container System - Responsive & SEO Friendly */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 var(--space-4);
+}
+
+/* Grid System - CSS Grid Based */
+.grid {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Flexbox Utilities - Performance Optimized */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   NAVIGATION - SEO & Performance Optimized
+   ========================================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom-color: rgba(99, 102, 241, 0.3);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo - SEO Optimized */
+.logo {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    z-index: calc(var(--z-fixed) + 1);
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    gap: var(--space-4);
+    padding: var(--space-2);
+    border-radius: var(--radius-xl);
+}
+
+.logo-image {
+    height: 175px;
+    width: 175px;
+    object-fit: contain;
+    transition: all var(--transition-normal);
+    border-radius: var(--radius-full);
+}
+
+.logo-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    transition: all var(--transition-normal);
+}
+
+/* Navigation Links - SEO Structured */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--space-2);
+    margin: 0;
+    padding: var(--space-2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a {
+    color: var(--gray-800);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* CTA Button - Conversion Optimized */
+.cta-button {
+    background: var(--gradient-primary);
+    color: white;
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ==========================================================================
+   PRICING SYSTEM - SEO & Performance Optimized
+   ========================================================================== */
+
+.pricing-section {
+    margin: var(--space-16) 0;
+    padding: var(--space-12);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-options {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+    overflow-x: visible;
+    padding-bottom: var(--space-4);
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.pricing-option {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    max-width: 280px;
+    width: 100%;
+}
+
+.pricing-option:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Consultation Card - SEO Optimized */
+.pricing-option.consultation {
+    border-color: var(--secondary);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+}
+
+.pricing-option.consultation .pricing-price {
+    background: var(--gradient-success);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Launch Promotion - Conversion Optimized */
+.pricing-option.launch-promotion {
+    border: 3px solid var(--warning);
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
+    transform: scale(1.02);
+    position: relative;
+    overflow: visible;
+}
+
+.pricing-option.launch-promotion .pricing-price {
+    color: var(--gray-900);
+    font-weight: 900;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN - Mobile-First & SEO Optimized
+   ========================================================================== */
+
+/* Mobile First Approach - Performance Optimized */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    .navbar {
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .logo-image {
+        height: 120px;
+        width: 120px;
+    }
+    
+    .logo-text {
+        font-size: var(--font-size-xl);
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .cta-button {
+        display: none;
+    }
+    
+    .pricing-options {
+        flex-direction: column;
+        gap: var(--space-6);
+        overflow-x: visible;
+        flex-wrap: nowrap;
+    }
+    
+    .pricing-option {
+        flex: none;
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+/* Tablet Optimization */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .pricing-options {
+        gap: var(--space-2);
+    }
+    
+    .pricing-option {
+        max-width: 240px;
+        padding: var(--space-4);
+    }
+    
+    .pricing-option .price {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Desktop Optimization */
+@media (min-width: 1025px) {
+    .pricing-options {
+        gap: var(--space-3);
+    }
+    
+    .pricing-option {
+        max-width: 280px;
+        padding: var(--space-6);
+    }
+}
+
+/* Large Desktop Optimization */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .pricing-options {
+        gap: var(--space-4);
+    }
+    
+    .pricing-option {
+        max-width: 300px;
+        padding: var(--space-8);
+    }
+}
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Hardware Acceleration for Animations */
+.pricing-option,
+.cta-button,
+.logo a {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .pricing-option {
+        border-width: 2px;
+        border-color: var(--light);
+    }
+    
+    .pricing-option.consultation {
+        border-color: var(--success);
+    }
+    
+    .pricing-option.launch-promotion {
+        border-color: var(--warning);
+    }
+}
+
+/* Print Styles - SEO Optimized */
+@media print {
+    .navbar,
+    .cta-button,
+    .pricing-option:hover {
+        display: none;
+    }
+    
+    .pricing-option {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--gray-400);
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - Performance Optimized
+   ========================================================================== */
+
+/* Spacing Utilities */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-5 { margin: var(--space-5); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+
+/* Display Utilities */
+.hidden { display: none; }
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+.grid { display: grid; }
+
+/* ==========================================================================
+   END OF SEO OPTIMIZED CSS
+   ========================================================================== */

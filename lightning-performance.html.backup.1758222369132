@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Mobile-First Design for Websites | Webly Industries - Responsive Web Development</title>
-    <meta name="title" content="Mobile-First Design for Websites | Webly Industries - Responsive Web Development">
-    <meta name="description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features. Mobile-first design starting at $300/month.">
-    <meta name="keywords" content="mobile-first design, responsive web design, mobile website development, touch interactions, mobile optimization, responsive design, mobile UX, mobile web development">
+    <title>Lightning Performance Web Development | Webly Industries - Speed Optimization</title>
+    <meta name="title" content="Lightning Performance Web Development | Webly Industries - Speed Optimization">
+    <meta name="description" content="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities. Instant loading and offline functionality. Professional speed optimization starting at $300/month.">
+    <meta name="keywords" content="website performance optimization, fast loading websites, PWA development, lazy loading, advanced caching, Core Web Vitals, speed optimization, performance monitoring, website acceleration">
     <meta name="author" content="Zane LaFaver - Webly Industries">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -16,28 +16,28 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://weblyindustries.com/mobile-first-design.html">
-    <meta property="og:title" content="Mobile-First Design for Websites | Webly Industries">
-    <meta property="og:description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features.">
-    <meta property="og:image" content="https://weblyindustries.com/images/mobile-first-design-og.jpg">
+    <meta property="og:url" content="https://weblyindustries.com/lightning-performance.html">
+    <meta property="og:title" content="Lightning Performance Web Development | Webly Industries">
+    <meta property="og:description" content="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities. Instant loading and offline functionality.">
+    <meta property="og:image" content="https://weblyindustries.com/images/lightning-performance-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Mobile-First Design for Websites - Webly Industries">
+    <meta property="og:image:alt" content="Lightning Performance Web Development - Webly Industries">
     <meta property="og:site_name" content="Webly Industries">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://weblyindustries.com/mobile-first-design.html">
-    <meta property="twitter:title" content="Mobile-First Design for Websites | Webly Industries">
-    <meta property="twitter:description" content="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features.">
-    <meta property="twitter:image" content="https://weblyindustries.com/images/mobile-first-design-twitter.jpg">
-    <meta property="twitter:image:alt" content="Mobile-First Design for Websites">
+    <meta property="twitter:url" content="https://weblyindustries.com/lightning-performance.html">
+    <meta property="twitter:title" content="Lightning Performance Web Development | Webly Industries">
+    <meta property="twitter:description" content="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities. Instant loading and offline functionality.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/lightning-performance-twitter.jpg">
+    <meta property="twitter:image:alt" content="Lightning Performance Web Development">
     <meta property="twitter:creator" content="@WeblyIndustries">
     <meta property="twitter:site" content="@WeblyIndustries">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://weblyindustries.com/mobile-first-design.html">
+    <link rel="canonical" href="https://weblyindustries.com/lightning-performance.html">
     
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,90 +55,6 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <style>
-        /* Consultation card styling for sublink pages */
-        .pricing-option.consultation {
-            border-color: var(--secondary);
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-        }
-        
-        .pricing-option.consultation .pricing-price {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Launch promotion styling for sublink pages */
-        .pricing-option.launch-promotion {
-            border: 3px solid #fbbf24;
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
-            transform: scale(1.02);
-            position: relative;
-            overflow: visible;
-        }
-        
-        .pricing-option.launch-promotion::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
-            border-radius: 20px;
-            z-index: -1;
-            animation: launchGlow 8s ease-in-out infinite alternate;
-            opacity: 0.8;
-        }
-        
-        .pricing-option.launch-promotion .pricing-price {
-            color: #000000;
-            font-weight: 900;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-            letter-spacing: -0.02em;
-            filter: contrast(1.1) brightness(1.05);
-        }
-        
-        .pricing-option.launch-promotion .pricing-period {
-            color: #000000;
-            font-weight: 700;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
-        
-        .pricing-option.launch-promotion .pricing-upkeep {
-            color: #000000;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-top: 0.1rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
-        
-        .pricing-option.launch-promotion .pricing-features li {
-            color: #000000 !important;
-            font-weight: 600;
-            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-        
-        .pricing-option.launch-promotion .pricing-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #fbbf24;
-            font-weight: bold;
-            font-size: 1.1em;
-            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
-        }
-    
-    </style>
 </head>
 <body>
         <!-- Navigation -->
@@ -168,9 +84,9 @@
         </div>
         <div class="hero-content">
             <a href="index.html#features" class="back-to-features">← Back to Features</a>
-            <div class="service-icon" data-icon="📱">📱</div>
-            <h1 class="hero-title" data-title="Mobile-First Design">Mobile-First Design</h1>
-            <p class="hero-subtitle" data-subtitle="Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience">Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience</p>
+            <div class="service-icon" data-icon="⚡">⚡</div>
+            <h1 class="hero-title" data-title="Lightning Performance">Lightning Performance</h1>
+            <p class="hero-subtitle" data-subtitle="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality">Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality</p>
             <div class="hero-cta">
                 <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
                 <a href="index.html#features" class="btn-secondary">Explore Features</a>
@@ -182,95 +98,95 @@
     <section class="service-details">
         <div class="container">
             <div class="service-content">
-                <h2>Perfect Mobile Experience on Every Device</h2>
-                <p class="lead">At Webly Industries, we specialize in mobile-first design that ensures your website looks and functions flawlessly on smartphones, tablets, and desktops. With over 60% of web traffic coming from mobile devices, we create responsive experiences that convert visitors into customers across all screen sizes.</p>
+                <h2>Blazing Fast Websites That Convert Better</h2>
+                <p class="lead">At Webly Industries, we specialize in creating lightning-fast websites that load in under 2 seconds and score 90+ on Google's Core Web Vitals. Our performance optimization techniques ensure your website not only looks great but also delivers exceptional speed that keeps users engaged and drives conversions.</p>
                 
                 <div class="features-grid">
                     <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Advanced Caching</h3>
+                        <p>Multi-layer caching strategies including browser caching, CDN optimization, and server-side caching to reduce load times by up to 80%.</p>
+                    </div>
+                    
+                    <div class="feature-item">
                         <div class="feature-icon">📱</div>
-                        <h3>Responsive Design</h3>
-                        <p>Fluid layouts that adapt seamlessly to any screen size, from 320px mobile screens to 4K desktop displays, ensuring perfect presentation everywhere.</p>
+                        <h3>PWA Capabilities</h3>
+                        <p>Progressive Web App features that enable offline functionality, push notifications, and app-like experiences on mobile devices.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">👆</div>
-                        <h3>Touch Interactions</h3>
-                        <p>Advanced touch gestures including swipe, pinch, tap, and long-press interactions that feel natural and intuitive on mobile devices.</p>
+                        <div class="feature-icon">🖼️</div>
+                        <h3>Lazy Loading</h3>
+                        <p>Intelligent image and content lazy loading that loads resources only when needed, reducing initial page load time by 60%.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Mobile Performance</h3>
-                        <p>Optimized for mobile networks with fast loading times, efficient resource usage, and smooth animations that work on any device.</p>
+                        <div class="feature-icon">📊</div>
+                        <h3>Core Web Vitals</h3>
+                        <p>Optimized for Google's Core Web Vitals with perfect scores on LCP, FID, and CLS metrics for better search rankings.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Thumb-Friendly Navigation</h3>
-                        <p>Navigation designed for one-handed use with properly sized touch targets and intuitive menu structures that work with thumbs.</p>
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Code Optimization</h3>
+                        <p>Minified CSS, JavaScript, and HTML with tree-shaking and dead code elimination for maximum efficiency.</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">📐</div>
-                        <h3>Flexible Grid Systems</h3>
-                        <p>CSS Grid and Flexbox layouts that automatically adjust content positioning and sizing based on available screen space.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Orientation Support</h3>
-                        <p>Seamless experience in both portrait and landscape orientations with automatic layout adjustments and content reflow.</p>
+                        <div class="feature-icon">🌐</div>
+                        <h3>CDN Integration</h3>
+                        <p>Global Content Delivery Network integration for faster content delivery worldwide with 99.9% uptime guarantee.</p>
                     </div>
                 </div>
 
-                <div class="mobile-features">
-                    <h3>Advanced Mobile Features</h3>
-                    <div class="mobile-features-grid">
-                        <div class="mobile-feature-item">
-                            <h4>Progressive Web App (PWA)</h4>
-                            <p>App-like experience with offline functionality, push notifications, and home screen installation</p>
+                <div class="performance-metrics">
+                    <h3>Performance Guarantees</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-number">&lt;2s</div>
+                            <div class="metric-label">Page Load Time</div>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Touch Gestures</h4>
-                            <p>Swipe navigation, pinch-to-zoom, pull-to-refresh, and other native mobile interactions</p>
+                        <div class="metric-item">
+                            <div class="metric-number">90+</div>
+                            <div class="metric-label">Core Web Vitals Score</div>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Mobile-First Images</h4>
-                            <p>Responsive images with WebP format, lazy loading, and automatic size optimization</p>
+                        <div class="metric-item">
+                            <div class="metric-number">99.9%</div>
+                            <div class="metric-label">Uptime Guarantee</div>
                         </div>
-                        <div class="mobile-feature-item">
-                            <h4>Fast Mobile Forms</h4>
-                            <p>Optimized form inputs with proper keyboards, validation, and auto-complete features</p>
-                        </div>
-                        <div class="mobile-feature-item">
-                            <h4>Mobile Navigation</h4>
-                            <p>Hamburger menus, bottom navigation, and other mobile-optimized navigation patterns</p>
-                        </div>
-                        <div class="mobile-feature-item">
-                            <h4>Performance Monitoring</h4>
-                            <p>Real-time monitoring of mobile performance metrics and user experience</p>
+                        <div class="metric-item">
+                            <div class="metric-number">A+</div>
+                            <div class="metric-label">Security Rating</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="device-support">
-                    <h3>Comprehensive Device Support</h3>
-                    <div class="device-grid">
-                        <div class="device-item">
-                            <h4>Smartphones</h4>
-                            <p>iPhone, Android, and all major mobile devices with screen sizes from 320px to 414px</p>
+                <div class="optimization-techniques">
+                    <h3>Advanced Optimization Techniques</h3>
+                    <div class="techniques-grid">
+                        <div class="technique-item">
+                            <h4>Image Optimization</h4>
+                            <p>WebP format conversion, responsive images, and automatic compression for 70% smaller file sizes</p>
                         </div>
-                        <div class="device-item">
-                            <h4>Tablets</h4>
-                            <p>iPad, Android tablets, and hybrid devices with screen sizes from 768px to 1024px</p>
+                        <div class="technique-item">
+                            <h4>Critical CSS</h4>
+                            <p>Above-the-fold CSS inlined for instant rendering while non-critical styles load asynchronously</p>
                         </div>
-                        <div class="device-item">
-                            <h4>Laptops</h4>
-                            <p>MacBook, Windows laptops, and Chromebooks with screen sizes from 1024px to 1440px</p>
+                        <div class="technique-item">
+                            <h4>Resource Hints</h4>
+                            <p>Preconnect, prefetch, and preload directives to optimize resource loading and reduce latency</p>
                         </div>
-                        <div class="device-item">
-                            <h4>Desktops</h4>
-                            <p>Large monitors and 4K displays with screen sizes from 1440px to 2560px and beyond</p>
+                        <div class="technique-item">
+                            <h4>Service Workers</h4>
+                            <p>Background caching and offline functionality for seamless user experiences</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>HTTP/2 Push</h4>
+                            <p>Server push technology to send critical resources before they're requested</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>Database Optimization</h4>
+                            <p>Query optimization and indexing for faster data retrieval and processing</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +196,8 @@
                     <h3>Flexible Pricing Plans</h3>
                     <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
                     <div class="pricing-options">
-                                        <div class="pricing-option consultation fade-in">
+                                        <div class="pricing-option fade-in">
+                    
                     <h3 class="pricing-title">Consultation</h3>
                     <div class="pricing-price">$0</div>
                     <div class="pricing-period">completely free</div>
@@ -298,7 +215,7 @@
                     <a href="index.html#contact" class="btn-primary">Book Now</a>
                 </div>
                         
-                <div class="pricing-option launch-promotion featured fade-in">
+                <div class="pricing-option featured fade-in">
                     <div class="launch-badge">🚀 Launch Promotion!</div>
                     <h3 class="pricing-title">Starter Website + Maintenance</h3>
                     <div class="pricing-price">$300</div>
@@ -362,10 +279,10 @@
                 </div>
 
                 <div class="cta-section">
-                    <h3>Ready to Go Mobile-First?</h3>
-                    <p>Don't lose customers to poor mobile experiences. Our mobile-first design ensures your website works perfectly on every device and converts visitors into customers.</p>
+                    <h3>Ready to Speed Up Your Website?</h3>
+                    <p>Don't let slow loading times cost you customers. Our performance optimization services will transform your website into a lightning-fast conversion machine.</p>
                     <div class="cta-buttons">
-                        <a href="index.html#contact" class="btn-primary">Get Free Mobile Audit</a>
+                        <a href="index.html#contact" class="btn-primary">Get Free Performance Audit</a>
                         <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
                     </div>
                 </div>
@@ -376,13 +293,13 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Ready to Go Mobile-First?</h2>
-            <p class="section-subtitle">Let's discuss how mobile-first design can transform your website</p>
+            <h2 class="section-title">Ready to Optimize Your Website Performance?</h2>
+            <p class="section-subtitle">Let's discuss how we can make your website lightning fast</p>
             
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p>Ready to create a mobile-first website? Contact us to discuss your mobile optimization needs and get a free consultation.</p>
+                    <p>Ready to boost your website's performance? Contact us to discuss your optimization needs and get a free performance audit.</p>
                     
                     <div class="contact-details">
                         <h4>Contact Information</h4>
@@ -413,18 +330,18 @@
                             <label for="service">Service Interest</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="mobile-basic">Basic Mobile</option>
-                                <option value="mobile-professional">Professional Mobile</option>
-                                <option value="consultation">Free Mobile Audit</option>
+                                <option value="performance-basic">Basic Performance</option>
+                                <option value="performance-professional">Professional Performance</option>
+                                <option value="consultation">Free Performance Audit</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your mobile design requirements..."></textarea>
+                            <textarea id="message" name="message" placeholder="Tell us about your performance optimization needs..."></textarea>
                         </div>
                         
-                        <input type="hidden" name="_subject" value="📱 MOBILE-FIRST DESIGN INQUIRY - Webly Industries">
+                        <input type="hidden" name="_subject" value="⚡ LIGHTNING PERFORMANCE INQUIRY - Webly Industries">
                         <input type="hidden" name="_replyto" value="">
                         <input type="hidden" name="_next" value="?success=true">
                         
@@ -445,7 +362,7 @@
                 <a href="index.html#contact">Contact</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Webly Industries. All rights reserved. | Built mobile-first</p>
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built for lightning-fast performance</p>
             </div>
         </div>
     </footer>
@@ -455,9 +372,9 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Mobile-First Web Design Service",
-        "name": "Mobile-First Design",
-        "description": "Create responsive websites that adapt perfectly to all devices with advanced touch interactions and mobile-specific features for optimal user experience.",
+        "serviceType": "Website Performance Optimization Service",
+        "name": "Lightning Performance",
+        "description": "Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality.",
         "provider": {
             "@type": "Organization",
             "name": "Webly Industries",
@@ -469,22 +386,22 @@
                 "email": "ZaneLaFaver@gmail.com"
             }
         },
-        "url": "https://weblyindustries.com/mobile-first-design.html",
+        "url": "https://weblyindustries.com/lightning-performance.html",
         "offers": [
             {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Touch Interactions",
-                        "description": "Advanced touch gestures for natural mobile interactions"
+                        "name": "PWA Capabilities",
+                        "description": "Progressive Web App features for offline functionality"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Mobile Performance",
-                        "description": "Optimized for mobile networks with fast loading times"
+                        "name": "Lazy Loading",
+                        "description": "Intelligent resource loading for optimal performance"
                     }
                 }
             ]

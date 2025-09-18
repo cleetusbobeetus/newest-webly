@@ -244,7 +244,12 @@
             color: var(--light);
         }
         
-        
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
         
         .pricing-option {
             background: rgba(255, 255, 255, 0.05);
@@ -451,7 +456,9 @@
                 grid-template-columns: 1fr;
             }
             
-            
+            .pricing-options {
+                grid-template-columns: 1fr;
+            }
             
             .cta-buttons {
                 flex-direction: column;
@@ -466,89 +473,6 @@
                 font-size: 1.9rem;
             }
         }
-    
-        /* Consultation card styling for sublink pages */
-        .pricing-option.consultation {
-            border-color: var(--secondary);
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-        }
-        
-        .pricing-option.consultation .pricing-price {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Launch promotion styling for sublink pages */
-        .pricing-option.launch-promotion {
-            border: 3px solid #fbbf24;
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
-            transform: scale(1.02);
-            position: relative;
-            overflow: visible;
-        }
-        
-        .pricing-option.launch-promotion::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
-            border-radius: 20px;
-            z-index: -1;
-            animation: launchGlow 8s ease-in-out infinite alternate;
-            opacity: 0.8;
-        }
-        
-        .pricing-option.launch-promotion .pricing-price {
-            color: #000000;
-            font-weight: 900;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-            letter-spacing: -0.02em;
-            filter: contrast(1.1) brightness(1.05);
-        }
-        
-        .pricing-option.launch-promotion .pricing-period {
-            color: #000000;
-            font-weight: 700;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
-        
-        .pricing-option.launch-promotion .pricing-upkeep {
-            color: #000000;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-top: 0.1rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
-        
-        .pricing-option.launch-promotion .pricing-features li {
-            color: #000000 !important;
-            font-weight: 600;
-            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-        
-        .pricing-option.launch-promotion .pricing-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #fbbf24;
-            font-weight: bold;
-            font-size: 1.1em;
-            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
-        }
-    
     </style>
 </head>
 <body>
@@ -663,7 +587,8 @@
                     <h3>Flexible Pricing Plans</h3>
                     <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
                     <div class="pricing-options">
-                                        <div class="pricing-option consultation fade-in">
+                                        <div class="pricing-option fade-in">
+                    
                     <h3 class="pricing-title">Consultation</h3>
                     <div class="pricing-price">$0</div>
                     <div class="pricing-period">completely free</div>
@@ -681,7 +606,7 @@
                     <a href="index.html#contact" class="btn-primary">Book Now</a>
                 </div>
                         
-                <div class="pricing-option launch-promotion featured fade-in">
+                <div class="pricing-option featured fade-in">
                     <div class="launch-badge">🚀 Launch Promotion!</div>
                     <h3 class="pricing-title">Starter Website + Maintenance</h3>
                     <div class="pricing-price">$300</div>
