@@ -211,7 +211,7 @@ class ThreeScene {
         
         // Store explosion properties
         explosion.userData = {
-            life: 1.0, // 1 second lifetime
+            life: 3.0, // 3 seconds lifetime (3x longer)
             type: type
         };
 
@@ -253,7 +253,7 @@ class ThreeScene {
             
             particle.userData = {
                 velocity: velocity,
-                life: 0.8
+                life: 2.5 // 2.5 seconds lifetime (3x longer)
             };
 
             this.scene.add(particle);
@@ -261,7 +261,7 @@ class ThreeScene {
             // Animate particle
             const animateParticle = () => {
                 particle.position.add(particle.userData.velocity);
-                particle.userData.velocity.multiplyScalar(0.98); // Slow down
+                particle.userData.velocity.multiplyScalar(0.995); // Slower decay (travel further)
                 particle.userData.life -= 0.016;
                 particle.material.opacity = particle.userData.life;
                 
