@@ -1228,9 +1228,33 @@ body {
 }
 
 .process-step p {
-    color: var(--gray);
-    line-height: 1.6;
-    font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Clickable process step styling */
+.clickable-step {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.clickable-step:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+.clickable-step:hover .icon-circle {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.clickable-step:hover h3 {
+  color: #667eea;
 }
 
 .process-arrow {
