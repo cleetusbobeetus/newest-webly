@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options - Webly Industries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                Choose Payment Method
+            </h1>
+            <p class="text-xl text-gray-300">
+                Select your preferred way to pay for Webly Industries services
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- CashApp Button -->
+            <button
+                onclick="handleCashApp()"
+                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-6 px-8 rounded-xl text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-4"
+            >
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-green-500 font-bold text-lg">$</span>
+                </div>
+                <span>Pay with Cash App</span>
+            </button>
+
+            <!-- PayPal Button -->
+            <div class="w-full">
+                <div id="paypal-button-container" class="w-full"></div>
+            </div>
+
+            <!-- Stripe Button -->
+            <button
+                onclick="handleStripe()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-6 px-8 rounded-xl text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-4"
+            >
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-blue-600 font-bold text-lg">S</span>
+                </div>
+                <span>Pay with Stripe</span>
+            </button>
+        </div>
+
+        <div class="text-center mt-12">
+            <p class="text-gray-400 text-sm">
+                All payments are secure and encrypted. Choose the method that works best for you.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // CashApp redirect function
+        function handleCashApp() {
+            const cashTag = '$YourCashTag'; // Update this with your actual CashTag
+            window.open(`https://cash.app/${cashTag}`, '_blank');
+        }
+
+        // Stripe checkout (you'll need to implement this with your backend)
+        function handleStripe() {
+            // For now, redirect to a contact form or show a message
+            alert('Stripe integration requires a backend. Please contact us directly for payment options.');
+        }
+
+        // PayPal integration
+        if (window.paypal) {
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '10.00' // Update with your actual amount
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        console.log('Payment completed:', details);
+                        alert('Payment successful!');
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal error:', err);
+                    alert('PayPal payment failed. Please try again.');
+                }
+            }).render('#paypal-button-container');
+        }
+    </script>
+</body>
+</html>
