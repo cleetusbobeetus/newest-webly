@@ -151,6 +151,56 @@ window.addEventListener('scroll', () => {
     // AI Chat Widget
     createAIChatWidget();
     
+    // Mobile Menu Functionality
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const hamburger = mobileMenuButton.querySelector('.hamburger');
+    
+    if (mobileMenuButton && mobileMenu) {
+        // Open menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            hamburger.classList.add('open');
+        });
+        
+        // Close menu with close button
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+        }
+        
+        // Close mobile menu when clicking on links
+        const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-links a, .mobile-cta-button');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+        });
+        
+        // Close mobile menu when tapping outside (not scrolling)
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('open')) {
+                // Check if click is outside the menu and not on the hamburger button
+                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
+            }
+        });
+        
+        // Prevent menu from closing when clicking inside the menu content
+        const mobileMenuContent = mobileMenu.querySelector('.mobile-menu-content');
+        if (mobileMenuContent) {
+            mobileMenuContent.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+    }
+    
 });
 
 async function handleFormSubmission(form) {
