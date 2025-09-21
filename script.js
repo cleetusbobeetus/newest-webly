@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-            }, 500);
+            }, 300);
         }
-    }, 2000);
+    }, 1200);
 
     // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
