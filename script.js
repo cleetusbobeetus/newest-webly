@@ -1,9 +1,30 @@
 // Advanced Website Script
 document.addEventListener('DOMContentLoaded', function() {
+    // Rotating loading text
+    const loadingTexts = [
+        "Transform Your Business with AI-Powered Websites",
+        "Building the Future of Your Business",
+        "Launching Your AI-Powered Success",
+        "Future-Proof Your Business",
+        "Get Ready for Your AI-Powered Business Website"
+    ];
+    
+    let currentTextIndex = 0;
+    const loadingTextElement = document.querySelector('.loading-text');
+    
+    // Rotate text every 400ms
+    const textRotationInterval = setInterval(() => {
+        if (loadingTextElement) {
+            loadingTextElement.textContent = loadingTexts[currentTextIndex];
+            currentTextIndex = (currentTextIndex + 1) % loadingTexts.length;
+        }
+    }, 400);
+    
     // Hide loading screen
     setTimeout(() => {
         const loadingScreen = document.getElementById('loadingScreen');
         if (loadingScreen) {
+            clearInterval(textRotationInterval); // Stop text rotation
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
