@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>{{PAGE_TITLE}} | Webly Industries - {{PAGE_SUBTITLE}}</title>
+    <meta name="title" content="{{PAGE_TITLE}} | Webly Industries - {{PAGE_SUBTITLE}}">
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/{{PAGE_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}} | Webly Industries">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:image" content="https://weblyindustries.com/images/{{PAGE_IMAGE}}-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{PAGE_TITLE}} - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/{{PAGE_URL}}">
+    <meta property="twitter:title" content="{{PAGE_TITLE}} | Webly Industries">
+    <meta property="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/{{PAGE_IMAGE}}-twitter.jpg">
+    <meta property="twitter:image:alt" content="{{PAGE_TITLE}}">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/{{PAGE_URL}}">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- All styles are now handled by main styles.css -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <span class="logo-text">Webly Industries</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon">{{SERVICE_ICON}}</div>
+            <h1 class="hero-title">{{PAGE_TITLE}}</h1>
+            <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#contact" class="btn-secondary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>{{MAIN_HEADING}}</h2>
+                <p class="lead">{{LEAD_PARAGRAPH}}</p>
+                
+                <div class="features-grid">
+                    {{FEATURES_GRID}}
+                </div>
+
+                {{ADDITIONAL_SECTIONS}}
+
+                <div class="pricing-section">
+                    <h3>{{PAGE_TITLE}} Pricing</h3>
+                    <div class="pricing-options">
+                        {{PRICING_OPTIONS}}
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>{{CTA_HEADING}}</h3>
+                    <p>{{CTA_DESCRIPTION}}</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">{{CTA_BUTTON_1}}</a>
+                        <a href="index.html#pricing" class="btn-secondary">{{CTA_BUTTON_2}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">{{CONTACT_HEADING}}</h2>
+            <p class="section-subtitle">{{CONTACT_SUBTITLE}}</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>{{CONTACT_DESCRIPTION}}</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                {{SERVICE_OPTIONS}}
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="{{MESSAGE_PLACEHOLDER}}"></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="{{EMAIL_SUBJECT}}">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | {{FOOTER_TAGLINE}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "{{SERVICE_TYPE}}",
+        "name": "{{PAGE_TITLE}}",
+        "description": "{{PAGE_DESCRIPTION}}",
+        "provider": {
+            "@type": "Organization",
+            "name": "Webly Industries",
+            "url": "https://weblyindustries.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (385) 253-2721",
+                "contactType": "Customer Service",
+                "email": "ZaneLaFaver@gmail.com"
+            }
+        },
+        "url": "https://weblyindustries.com/{{PAGE_URL}}",
+        "offers": {{PRICING_JSON}}
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+Contact: mailto:ZaneLaFaver@gmail.com
+Contact: tel:+1-385-253-2721
+Expires: 2025-01-15T00:00:00.000Z
+Encryption: https://weblyindustries.com/pgp-key.txt
+Acknowledgments: https://weblyindustries.com/security-acknowledgments
+Preferred-Languages: en
+Canonical: https://weblyindustries.com/.well-known/security.txt
+Policy: https://weblyindustries.com/security-policy
+
+# Webly Industries Security Policy
+# 
+# We take security seriously and appreciate responsible disclosure of vulnerabilities.
+# 
+# If you discover a security vulnerability, please:
+# 1. Do not disclose it publicly until we have had a chance to address it
+# 2. Contact us via email or phone
+# 3. Provide detailed information about the vulnerability
+# 4. Allow us reasonable time to fix the issue
+# 
+# We will:
+# - Respond to your report within 48 hours
+# - Keep you updated on our progress
+# - Credit you in our security acknowledgments (if desired)
+# - Work with you to verify the fix
+# 
+# Thank you for helping keep our services secure!

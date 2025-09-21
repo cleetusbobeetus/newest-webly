@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webly Industries - Page Generator</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #6366f1;
+            margin-bottom: 2rem;
+        }
+        
+        .generator-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #f8fafc;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #6366f1;
+            color: #6366f1;
+        }
+        
+        .btn-secondary:hover {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .preview-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .preview-iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: white;
+        }
+        
+        .status {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .status.success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .status.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .pricing-option {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .pricing-option.featured {
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #6366f1;
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Webly Industries - Page Generator</h1>
+        
+        <div class="generator-section">
+            <h2>Generate Service Pages</h2>
+            <p>Use this tool to generate new service pages or update existing ones using the template system.</p>
+            
+            <div class="form-group">
+                <label for="pageKey">Page Key (URL identifier):</label>
+                <input type="text" id="pageKey" placeholder="e.g., ai-powered-intelligence" value="ai-powered-intelligence">
+            </div>
+            
+            <div class="form-group">
+                <label for="pageTitle">Page Title:</label>
+                <input type="text" id="pageTitle" placeholder="e.g., AI-Powered Intelligence for Websites" value="AI-Powered Intelligence for Websites">
+            </div>
+            
+            <div class="form-group">
+                <label for="pageSubtitle">Page Subtitle:</label>
+                <input type="text" id="pageSubtitle" placeholder="e.g., Advanced AI Integration" value="Advanced AI Integration">
+            </div>
+            
+            <div class="form-group">
+                <label for="pageDescription">Page Description:</label>
+                <textarea id="pageDescription" placeholder="Meta description for SEO...">Transform your website with advanced AI integration. Personalized user experiences, smart content recommendations, and automated customer support. Get AI-powered websites starting at $300/month.</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="serviceIcon">Service Icon (emoji):</label>
+                <input type="text" id="serviceIcon" placeholder="🚀" value="🚀">
+            </div>
+            
+            <div class="form-group">
+                <label for="heroSubtitle">Hero Subtitle:</label>
+                <textarea id="heroSubtitle" placeholder="Hero section subtitle...">Transform your website with advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="mainHeading">Main Heading:</label>
+                <input type="text" id="mainHeading" placeholder="Main section heading..." value="Revolutionize Your Website with AI-Powered Intelligence">
+            </div>
+            
+            <div class="form-group">
+                <label for="leadParagraph">Lead Paragraph:</label>
+                <textarea id="leadParagraph" placeholder="Main description paragraph...">At Webly Industries, we integrate cutting-edge Artificial Intelligence into your website to create truly dynamic and responsive digital experiences. Our AI solutions go beyond basic automation, offering personalized interactions that adapt to each user's unique journey.</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="ctaHeading">CTA Heading:</label>
+                <input type="text" id="ctaHeading" placeholder="Call-to-action heading..." value="Ready to Transform Your Website with AI?">
+            </div>
+            
+            <div class="form-group">
+                <label for="ctaDescription">CTA Description:</label>
+                <textarea id="ctaDescription" placeholder="Call-to-action description...">Join hundreds of businesses already using AI-powered intelligence to boost engagement, increase conversions, and provide exceptional user experiences.</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="contactHeading">Contact Heading:</label>
+                <input type="text" id="contactHeading" placeholder="Contact section heading..." value="Ready to Get Started with AI?">
+            </div>
+            
+            <div class="form-group">
+                <label for="contactSubtitle">Contact Subtitle:</label>
+                <input type="text" id="contactSubtitle" placeholder="Contact section subtitle..." value="Let's discuss how AI-powered intelligence can transform your website">
+            </div>
+            
+            <div class="form-group">
+                <label for="footerTagline">Footer Tagline:</label>
+                <input type="text" id="footerTagline" placeholder="Footer tagline..." value="Built with cutting-edge AI technology">
+            </div>
+            
+            <button class="btn" onclick="generatePage()">Generate Page</button>
+            <button class="btn btn-secondary" onclick="previewPage()">Preview Page</button>
+            <button class="btn btn-secondary" onclick="downloadPage()">Download Page</button>
+        </div>
+        
+        <div id="status" class="status hidden"></div>
+        
+        <div id="previewSection" class="preview-section hidden">
+            <h2>Page Preview</h2>
+            <iframe id="previewFrame" class="preview-iframe" src="about:blank"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Page configuration template
+        const pageTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>{{PAGE_TITLE}} | Webly Industries - {{PAGE_SUBTITLE}}</title>
+    <meta name="title" content="{{PAGE_TITLE}} | Webly Industries - {{PAGE_SUBTITLE}}">
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/{{PAGE_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}} | Webly Industries">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:image" content="https://weblyindustries.com/images/{{PAGE_IMAGE}}-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{PAGE_TITLE}} - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/{{PAGE_URL}}">
+    <meta property="twitter:title" content="{{PAGE_TITLE}} | Webly Industries">
+    <meta property="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/{{PAGE_IMAGE}}-twitter.jpg">
+    <meta property="twitter:image:alt" content="{{PAGE_TITLE}}">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/{{PAGE_URL}}">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">Webly Industries</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-content">
+            <div class="service-icon">{{SERVICE_ICON}}</div>
+            <h1 class="hero-title">{{PAGE_TITLE}}</h1>
+            <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#contact" class="btn-secondary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>{{MAIN_HEADING}}</h2>
+                <p class="lead">{{LEAD_PARAGRAPH}}</p>
+                
+                <div class="features-grid">
+                    {{FEATURES_GRID}}
+                </div>
+
+                {{ADDITIONAL_SECTIONS}}
+
+                <div class="pricing-section">
+                    <h3>{{PAGE_TITLE}} Pricing</h3>
+                    <div class="pricing-options">
+                        {{PRICING_OPTIONS}}
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>{{CTA_HEADING}}</h3>
+                    <p>{{CTA_DESCRIPTION}}</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">{{CTA_BUTTON_1}}</a>
+                        <a href="index.html#pricing" class="btn-secondary">{{CTA_BUTTON_2}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">{{CONTACT_HEADING}}</h2>
+            <p class="section-subtitle">{{CONTACT_SUBTITLE}}</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>{{CONTACT_DESCRIPTION}}</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                {{SERVICE_OPTIONS}}
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="{{MESSAGE_PLACEHOLDER}}"></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="{{EMAIL_SUBJECT}}">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | {{FOOTER_TAGLINE}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>`;
+
+        function getFormData() {
+            return {
+                PAGE_TITLE: document.getElementById('pageTitle').value,
+                PAGE_SUBTITLE: document.getElementById('pageSubtitle').value,
+                PAGE_DESCRIPTION: document.getElementById('pageDescription').value,
+                PAGE_KEYWORDS: 'web development, custom websites, professional web design, responsive design, modern web development',
+                PAGE_URL: document.getElementById('pageKey').value + '.html',
+                PAGE_IMAGE: document.getElementById('pageKey').value,
+                SERVICE_ICON: document.getElementById('serviceIcon').value,
+                HERO_SUBTITLE: document.getElementById('heroSubtitle').value,
+                MAIN_HEADING: document.getElementById('mainHeading').value,
+                LEAD_PARAGRAPH: document.getElementById('leadParagraph').value,
+                CTA_HEADING: document.getElementById('ctaHeading').value,
+                CTA_DESCRIPTION: document.getElementById('ctaDescription').value,
+                CTA_BUTTON_1: 'Get Free Consultation',
+                CTA_BUTTON_2: 'View All Pricing',
+                CONTACT_HEADING: document.getElementById('contactHeading').value,
+                CONTACT_SUBTITLE: document.getElementById('contactSubtitle').value,
+                CONTACT_DESCRIPTION: 'Ready to get started? Contact us to discuss your project and get a free consultation.',
+                SERVICE_OPTIONS: `
+                    <option value="${document.getElementById('pageKey').value}-basic">Basic Package</option>
+                    <option value="${document.getElementById('pageKey').value}-professional">Professional Package</option>
+                    <option value="${document.getElementById('pageKey').value}-enterprise">Enterprise Package</option>
+                    <option value="consultation">Free Consultation</option>
+                `,
+                MESSAGE_PLACEHOLDER: 'Tell us about your project requirements...',
+                EMAIL_SUBJECT: `🎯 ${document.getElementById('pageTitle').value.toUpperCase()} INQUIRY - Webly Industries`,
+                FOOTER_TAGLINE: document.getElementById('footerTagline').value,
+                FEATURES_GRID: `
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Advanced Technology</h3>
+                        <p>Cutting-edge solutions that give you a competitive advantage in the digital marketplace.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized for speed and performance to ensure the best user experience possible.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>Perfect performance across all devices with responsive design and touch interactions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Reliable</h3>
+                        <p>Enterprise-grade security and reliability to protect your business and customers.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analytics Ready</h3>
+                        <p>Built-in analytics and tracking to help you understand and optimize performance.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Conversion Focused</h3>
+                        <p>Designed to convert visitors into customers with proven conversion optimization techniques.</p>
+                    </div>
+                `,
+                ADDITIONAL_SECTIONS: `
+                    <div class="benefits-section">
+                        <h3>Why Choose Our Service?</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <h4>Proven Results</h4>
+                                <p>Our solutions have helped hundreds of businesses achieve their goals.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h4>Expert Support</h4>
+                                <p>Dedicated support team to help you succeed every step of the way.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h4>Scalable Solutions</h4>
+                                <p>Grow with confidence knowing your solution can scale with your business.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h4>ROI Guaranteed</h4>
+                                <p>We're so confident in our solutions that we guarantee measurable ROI.</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                PRICING_OPTIONS: `
+                    <div class="pricing-option">
+                        <h4>Basic Package</h4>
+                        <div class="price">$300<span>/month</span></div>
+                        <ul>
+                            <li>Core features included</li>
+                            <li>Basic support</li>
+                            <li>Standard performance</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn-primary">Get Started</a>
+                    </div>
+                    <div class="pricing-option featured">
+                        <h4>Professional Package</h4>
+                        <div class="price">$799<span>/month</span></div>
+                        <ul>
+                            <li>Advanced features</li>
+                            <li>Priority support</li>
+                            <li>Enhanced performance</li>
+                            <li>Phone support</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn-primary">Get Started</a>
+                    </div>
+                    <div class="pricing-option">
+                        <h4>Enterprise Package</h4>
+                        <div class="price">$1,999<span>/month</span></div>
+                        <ul>
+                            <li>All features included</li>
+                            <li>24/7 support</li>
+                            <li>Maximum performance</li>
+                            <li>Dedicated account manager</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn-primary">Get Started</a>
+                    </div>
+                `
+            };
+        }
+
+        function replacePlaceholders(template, data) {
+            let result = template;
+            
+            for (const [key, value] of Object.entries(data)) {
+                const placeholder = `{{${key}}}`;
+                result = result.replace(new RegExp(placeholder, 'g'), value);
+            }
+            
+            return result;
+        }
+
+        function showStatus(message, type = 'success') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.classList.remove('hidden');
+            
+            setTimeout(() => {
+                status.classList.add('hidden');
+            }, 3000);
+        }
+
+        function generatePage() {
+            try {
+                const formData = getFormData();
+                const pageContent = replacePlaceholders(pageTemplate, formData);
+                
+                // Create a blob and download
+                const blob = new Blob([pageContent], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = formData.PAGE_URL;
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                showStatus(`✅ Page generated successfully: ${formData.PAGE_URL}`);
+            } catch (error) {
+                showStatus(`❌ Error generating page: ${error.message}`, 'error');
+            }
+        }
+
+        function previewPage() {
+            try {
+                const formData = getFormData();
+                const pageContent = replacePlaceholders(pageTemplate, formData);
+                
+                // Create a blob URL for preview
+                const blob = new Blob([pageContent], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                
+                // Show preview section
+                const previewSection = document.getElementById('previewSection');
+                const previewFrame = document.getElementById('previewFrame');
+                
+                previewFrame.src = url;
+                previewSection.classList.remove('hidden');
+                
+                showStatus('✅ Page preview generated');
+            } catch (error) {
+                showStatus(`❌ Error generating preview: ${error.message}`, 'error');
+            }
+        }
+
+        function downloadPage() {
+            generatePage();
+        }
+    </script>
+</body>
+</html>

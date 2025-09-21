@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>3D WebGL Graphics for Websites | Webly Industries - Stunning 3D Visualizations</title>
+    <meta name="title" content="3D WebGL Graphics for Websites | Webly Industries - Stunning 3D Visualizations">
+    <meta name="description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert. Professional 3D web development starting at $300/month.">
+    <meta name="keywords" content="3D WebGL graphics, Three.js development, 3D website design, WebGL animations, interactive 3D elements, 3D web development, immersive web experiences, 3D graphics programming">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/3d-webgl-graphics.html">
+    <meta property="og:title" content="3D WebGL Graphics for Websites | Webly Industries">
+    <meta property="og:description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert.">
+    <meta property="og:image" content="https://weblyindustries.com/images/3d-webgl-graphics-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="3D WebGL Graphics for Websites - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/3d-webgl-graphics.html">
+    <meta property="twitter:title" content="3D WebGL Graphics for Websites | Webly Industries">
+    <meta property="twitter:description" content="Create stunning 3D visualizations and interactive elements with WebGL and Three.js. Immersive user experiences that captivate and convert.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/3d-webgl-graphics-twitter.jpg">
+    <meta property="twitter:image:alt" content="3D WebGL Graphics for Websites">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/3d-webgl-graphics.html">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Consultation card styling for sublink pages */
+        .pricing-option.consultation {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+        }
+        
+        .pricing-option.consultation .pricing-price {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Launch promotion styling for sublink pages */
+        .pricing-option.launch-promotion {
+            border: 3px solid #fbbf24;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
+            transform: scale(1.02);
+            position: relative;
+            overflow: visible;
+        }
+        
+        .pricing-option.launch-promotion::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
+            border-radius: 20px;
+            z-index: -1;
+            animation: launchGlow 8s ease-in-out infinite alternate;
+            opacity: 0.8;
+        }
+        
+        .pricing-option.launch-promotion .pricing-price {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+            letter-spacing: -0.02em;
+            filter: contrast(1.1) brightness(1.05);
+        }
+        
+        .pricing-option.launch-promotion .pricing-period {
+            color: #000000;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        .pricing-option.launch-promotion .pricing-upkeep {
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        .pricing-option.launch-promotion .pricing-features li {
+            color: #000000 !important;
+            font-weight: 600;
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .pricing-option.launch-promotion .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+        }
+    
+    </style>
+</head>
+<body>
+        <!-- Navigation -->
+            <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <span class="logo-text">Webly Industries</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero" id="home">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon" data-icon="🎨">🎨</div>
+            <h1 class="hero-title" data-title="3D WebGL Graphics">3D WebGL Graphics</h1>
+            <p class="hero-subtitle" data-subtitle="Create stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences that captivate and convert">Create stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences that captivate and convert</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#features" class="btn-secondary">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>Bring Your Website to Life with 3D WebGL Graphics</h2>
+                <p class="lead">At Webly Industries, we specialize in creating breathtaking 3D web experiences using cutting-edge WebGL technology and Three.js. Our 3D graphics solutions transform ordinary websites into immersive, interactive experiences that engage users and drive conversions.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Interactive 3D Models</h3>
+                        <p>Custom 3D models that users can rotate, zoom, and interact with in real-time. Perfect for product showcases, architectural visualizations, and educational content.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <h3>Particle Systems</h3>
+                        <p>Dynamic particle effects that create stunning visual impact. From floating particles to complex simulations, we bring your ideas to life with fluid, responsive animations.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🌊</div>
+                        <h3>Fluid Animations</h3>
+                        <p>Smooth, 60fps animations that respond to user interactions. Our WebGL implementations ensure buttery-smooth performance across all devices and browsers.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Interactive Scenes</h3>
+                        <p>Immersive 3D environments that users can explore and interact with. Create engaging experiences that keep visitors on your site longer.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>Responsive 3D graphics that work seamlessly on mobile devices. Touch controls and optimized performance for the best mobile experience.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Performance Optimized</h3>
+                        <p>Lightweight, efficient 3D implementations that load fast and run smoothly. We optimize for performance without sacrificing visual quality.</p>
+                    </div>
+                </div>
+
+                <div class="technology-section">
+                    <h3>Advanced 3D Technologies We Use</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>WebGL 2.0</h4>
+                            <p>Latest WebGL standard for maximum performance and visual quality</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Three.js</h4>
+                            <p>Industry-leading 3D library for web development</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>GLSL Shaders</h4>
+                            <p>Custom shaders for unique visual effects and materials</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>GSAP Animations</h4>
+                            <p>Professional-grade animations and timeline controls</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Physics Engines</h4>
+                            <p>Realistic physics simulations for interactive elements</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Post-Processing</h4>
+                            <p>Advanced effects like bloom, SSAO, and color grading</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-cases-section">
+                    <h3>Perfect for These Industries</h3>
+                    <div class="use-cases-grid">
+                        <div class="use-case-item">
+                            <h4>E-commerce</h4>
+                            <p>3D product viewers, virtual try-ons, and interactive catalogs</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Real Estate</h4>
+                            <p>Virtual property tours, architectural visualizations, and 3D floor plans</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Education</h4>
+                            <p>Interactive learning experiences, 3D models, and simulations</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Gaming</h4>
+                            <p>Browser-based games, interactive experiences, and 3D interfaces</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Architecture</h4>
+                            <p>Building visualizations, interior design, and construction planning</p>
+                        </div>
+                        <div class="use-case-item">
+                            <h4>Entertainment</h4>
+                            <p>Interactive media, virtual experiences, and creative showcases</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Flexible Pricing Plans</h3>
+                    <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
+                    <div class="pricing-options">
+                                        <div class="pricing-option consultation fade-in">
+                    <h3 class="pricing-title">Consultation</h3>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">completely free</div>
+                    
+                    <ul class="pricing-features">
+                        <li>Email Website Analysis</li>
+                        <li>Current Website Audit</li>
+                        <li>Identify Weaknesses & Issues</li>
+                        <li>Improvement Recommendations</li>
+                        <li>Technology Upgrade Suggestions</li>
+                        <li>Performance Optimization Tips</li>
+                        <li>Custom Action Plan</li>
+                        <li>No Obligation</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Book Now</a>
+                </div>
+                        
+                <div class="pricing-option launch-promotion featured fade-in">
+                    <div class="launch-badge">🚀 Launch Promotion!</div>
+                    <h3 class="pricing-title">Starter Website + Maintenance</h3>
+                    <div class="pricing-price">$300</div>
+                    <div class="pricing-period">installment</div>
+                    <div class="pricing-upkeep">$99 monthly upkeep/installments</div>
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>SSL Certificate Included</li>
+                        <li>Monthly Updates & Changes</li>
+                        <li>Priority Support</li>
+                        <li>Performance Monitoring</li>
+                        <li>Security Updates</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Starter</h3>
+                    <div class="pricing-price">$2,999</div>
+                    <div class="pricing-period">or $299/month for 12 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>3 Months Free Maintenance</li>
+                        <li>SSL Certificate Included</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Professional</h3>
+                    <div class="pricing-price">$7,999</div>
+                    <div class="pricing-period">or $399/month for 24 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>15-Page Advanced Website</li>
+                        <li>3D Graphics & Animations</li>
+                        <li>AI-Powered Features</li>
+                        <li>E-commerce Integration</li>
+                        <li>Advanced Analytics</li>
+                        <li>6 Months Free Maintenance</li>
+                        <li>Priority Support</li>
+                        <li>Custom Admin Dashboard</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                
+                </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Create Stunning 3D Experiences?</h3>
+                    <p>Transform your website with cutting-edge 3D WebGL graphics that captivate your audience and set you apart from the competition.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">Get Free 3D Consultation</a>
+                        <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Get Started with 3D Graphics?</h2>
+            <p class="section-subtitle">Let's discuss how 3D WebGL graphics can transform your website</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to create stunning 3D experiences? Contact us to discuss your project and get a free consultation.</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="3d-basic">Basic 3D Package</option>
+                                <option value="3d-professional">Professional 3D Package</option>
+                                <option value="consultation">Free 3D Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your 3D graphics requirements and vision..."></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="🎨 3D WEBGL GRAPHICS INQUIRY - Webly Industries">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built with cutting-edge 3D technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "3D WebGL Graphics Service",
+        "name": "3D WebGL Graphics",
+        "description": "Stunning 3D visualizations and interactive elements powered by WebGL and Three.js for immersive user experiences.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Webly Industries",
+            "url": "https://weblyindustries.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (385) 253-2721",
+                "contactType": "Customer Service",
+                "email": "ZaneLaFaver@gmail.com"
+            }
+        },
+        "url": "https://weblyindustries.com/3d-webgl-graphics.html",
+        "offers": [
+            {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Particle Systems",
+                        "description": "Dynamic particle effects for stunning visual impact"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fluid Animations",
+                        "description": "Smooth, 60fps animations that respond to user interactions"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>

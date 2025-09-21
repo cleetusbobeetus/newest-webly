@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>AI-Powered Intelligence for Websites | Webly Industries - Advanced AI Integration</title>
+    <meta name="title" content="AI-Powered Intelligence for Websites | Webly Industries - Advanced AI Integration">
+    <meta name="description" content="Transform your website with advanced AI integration. Personalized user experiences, smart content recommendations, and automated customer support. Get AI-powered websites starting at $300/month.">
+    <meta name="keywords" content="AI-powered websites, artificial intelligence web development, smart content recommendations, automated customer support, personalized user experience, AI chatbot, machine learning websites, intelligent web design">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/ai-powered-intelligence.html">
+    <meta property="og:title" content="AI-Powered Intelligence for Websites | Webly Industries">
+    <meta property="og:description" content="Transform your website with advanced AI integration. Personalized user experiences, smart content recommendations, and automated customer support. Get AI-powered websites starting at $300/month.">
+    <meta property="og:image" content="https://weblyindustries.com/images/ai-powered-intelligence-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AI-Powered Intelligence for Websites - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/ai-powered-intelligence.html">
+    <meta property="twitter:title" content="AI-Powered Intelligence for Websites | Webly Industries">
+    <meta property="twitter:description" content="Transform your website with advanced AI integration. Personalized user experiences, smart content recommendations, and automated customer support. Get AI-powered websites starting at $300/month.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/ai-powered-intelligence-twitter.jpg">
+    <meta property="twitter:image:alt" content="AI-Powered Intelligence for Websites">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/ai-powered-intelligence.html">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Service Page Specific Styles -->
+    <style>
+        /* Service Hero Section */
+        .service-hero {
+            min-height: 80vh;
+            padding-top: 100px;
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        /* Service Details Section */
+        .service-details {
+            padding: 6rem 2rem;
+        }
+        
+        .service-details .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .service-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .service-content .lead {
+            font-size: 1.3rem;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        /* Features Grid for Service Pages */
+        .service-details .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
+            margin: 4rem 0;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .feature-item:hover::before {
+            left: 100%;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .feature-item p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Additional Sections */
+        .benefits-section,
+        .technology-section {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .benefits-section h3,
+        .technology-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--light);
+        }
+        
+        .benefits-grid,
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item,
+        .tech-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .benefit-item h4,
+        .tech-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .benefit-item p,
+        .tech-item p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Pricing Section for Service Pages */
+        .pricing-section {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--light);
+        }
+        
+        
+        
+        .pricing-option {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-option.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        .pricing-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.2);
+        }
+        
+        .pricing-option h4 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .pricing-option .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-option .price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .pricing-option ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-option li {
+            padding: 0.5rem 0;
+            color: var(--light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .pricing-option li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Contact Section for Service Pages */
+        .contact .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .contact-details p {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Logo Styles */
+        .logo {
+            font-size: 2.25rem;
+            font-weight: 800;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            gap: 0.75rem;
+        }
+
+        .logo a:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            height: 225px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.25rem;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        .logo a:hover .logo-image {
+            filter: brightness(1.1);
+        }
+
+        .logo a:hover .logo-text {
+            filter: brightness(1.2);
+        }
+
+        /* Responsive Design for Service Pages */
+        @media (max-width: 768px) {
+            .service-hero {
+                min-height: 70vh;
+                padding-top: 80px;
+            }
+            
+            .service-icon {
+                font-size: 3rem;
+            }
+            
+            .service-content h2 {
+                font-size: 2rem;
+            }
+            
+            .service-content .lead {
+                font-size: 1.1rem;
+            }
+            
+            .service-details .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid,
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo-image {
+                height: 188px;
+            }
+            
+            .logo-text {
+                font-size: 1.9rem;
+            }
+        }
+    
+        /* Consultation card styling for sublink pages */
+        .pricing-option.consultation {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+        }
+        
+        .pricing-option.consultation .pricing-price {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Launch promotion styling for sublink pages */
+        .pricing-option.launch-promotion {
+            border: 3px solid #fbbf24;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
+            transform: scale(1.02);
+            position: relative;
+            overflow: visible;
+        }
+        
+        .pricing-option.launch-promotion::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
+            border-radius: 20px;
+            z-index: -1;
+            animation: launchGlow 8s ease-in-out infinite alternate;
+            opacity: 0.8;
+        }
+        
+        .pricing-option.launch-promotion .pricing-price {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+            letter-spacing: -0.02em;
+            filter: contrast(1.1) brightness(1.05);
+        }
+        
+        .pricing-option.launch-promotion .pricing-period {
+            color: #000000;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        .pricing-option.launch-promotion .pricing-upkeep {
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        .pricing-option.launch-promotion .pricing-features li {
+            color: #000000 !important;
+            font-weight: 600;
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .pricing-option.launch-promotion .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+        }
+    
+    </style>
+</head>
+<body>
+        <!-- Navigation -->
+            <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <span class="logo-text">Webly Industries</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero" id="home">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon" data-icon="🚀">🚀</div>
+            <h1 class="hero-title" data-title="AI-Powered Intelligence for Websites">AI-Powered Intelligence for Websites</h1>
+            <p class="hero-subtitle" data-subtitle="Transform your website with advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support">Transform your website with advanced AI integration for personalized user experiences, smart content recommendations, and automated customer support</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#features" class="btn-secondary">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>Revolutionize Your Website with AI-Powered Intelligence</h2>
+                <p class="lead">At Webly Industries, we integrate cutting-edge Artificial Intelligence into your website to create truly dynamic and responsive digital experiences. Our AI solutions go beyond basic automation, offering personalized interactions that adapt to each user's unique journey.</p>
+                
+                <div class="features-grid">
+                    
+            <div class="feature-item">
+                <div class="feature-icon">🧠</div>
+                <h3>Smart Content Recommendations</h3>
+                <p>Our AI algorithms analyze user behavior and preferences to deliver personalized content recommendations, increasing engagement and time on site by up to 300%.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <h3>Intelligent Chat Support</h3>
+                <p>Advanced AI chatbots that understand context, provide instant responses, and escalate complex queries to human agents when needed. Available 24/7.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <h3>Predictive Analytics</h3>
+                <p>Machine learning models that predict user behavior, optimize conversion paths, and provide actionable insights for continuous improvement.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h3>Personalized User Experience</h3>
+                <p>Dynamic content adaptation based on user preferences, location, device, and browsing history for a truly customized experience.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h3>Automated A/B Testing</h3>
+                <p>AI-powered testing that continuously optimizes your website elements, headlines, and calls-to-action for maximum conversion rates.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔍</div>
+                <h3>Smart Search & Discovery</h3>
+                <p>Intelligent search functionality that understands user intent, provides relevant results, and suggests related content automatically.</p>
+            </div>
+        
+                </div>
+
+                
+            <div class="benefits-section">
+                <h3>Why Choose AI-Powered Intelligence?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <h4>Increased Engagement</h4>
+                        <p>Personalized experiences keep users engaged longer and coming back for more.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📈</div>
+                        <h4>Higher Conversions</h4>
+                        <p>AI-optimized user journeys lead to significantly higher conversion rates.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🤖</div>
+                        <h4>24/7 Customer Support</h4>
+                        <p>Intelligent chatbots provide instant support without human intervention.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧠</div>
+                        <h4>Data-Driven Insights</h4>
+                        <p>Advanced analytics help you understand and optimize user behavior.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+                <div class="pricing-section">
+                    <h3>Flexible Pricing Plans</h3>
+                    <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
+                    <div class="pricing-options">
+                                        <div class="pricing-option consultation fade-in">
+                    <h3 class="pricing-title">Consultation</h3>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">completely free</div>
+                    
+                    <ul class="pricing-features">
+                        <li>Email Website Analysis</li>
+                        <li>Current Website Audit</li>
+                        <li>Identify Weaknesses & Issues</li>
+                        <li>Improvement Recommendations</li>
+                        <li>Technology Upgrade Suggestions</li>
+                        <li>Performance Optimization Tips</li>
+                        <li>Custom Action Plan</li>
+                        <li>No Obligation</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Book Now</a>
+                </div>
+                        
+                <div class="pricing-option launch-promotion featured fade-in">
+                    <div class="launch-badge">🚀 Launch Promotion!</div>
+                    <h3 class="pricing-title">Starter Website + Maintenance</h3>
+                    <div class="pricing-price">$300</div>
+                    <div class="pricing-period">installment</div>
+                    <div class="pricing-upkeep">$99 monthly upkeep/installments</div>
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>SSL Certificate Included</li>
+                        <li>Monthly Updates & Changes</li>
+                        <li>Priority Support</li>
+                        <li>Performance Monitoring</li>
+                        <li>Security Updates</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Starter</h3>
+                    <div class="pricing-price">$2,999</div>
+                    <div class="pricing-period">or $299/month for 12 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>3 Months Free Maintenance</li>
+                        <li>SSL Certificate Included</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Professional</h3>
+                    <div class="pricing-price">$7,999</div>
+                    <div class="pricing-period">or $399/month for 24 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>15-Page Advanced Website</li>
+                        <li>3D Graphics & Animations</li>
+                        <li>AI-Powered Features</li>
+                        <li>E-commerce Integration</li>
+                        <li>Advanced Analytics</li>
+                        <li>6 Months Free Maintenance</li>
+                        <li>Priority Support</li>
+                        <li>Custom Admin Dashboard</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                
+                </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Transform Your Website with AI?</h3>
+                    <p>Join hundreds of businesses already using AI-powered intelligence to boost engagement, increase conversions, and provide exceptional user experiences.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">Get Free AI Consultation</a>
+                        <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Get Started with AI?</h2>
+            <p class="section-subtitle">Let's discuss how AI-powered intelligence can transform your website</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to revolutionize your online presence with AI? Contact us to discuss your project and get a free consultation.</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                
+            <option value="ai-starter">AI Starter Package</option>
+            <option value="ai-professional">AI Professional Package</option>
+            <option value="consultation">Free AI Consultation</option>
+        
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your AI requirements and goals..."></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="🤖 AI-POWERED INTELLIGENCE INQUIRY - Webly Industries">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built with cutting-edge AI technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Integration Service",
+        "name": "AI-Powered Intelligence for Websites",
+        "description": "Transform your website with advanced AI integration. Personalized user experiences, smart content recommendations, and automated customer support. Get AI-powered websites starting at $300/month.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Webly Industries",
+            "url": "https://weblyindustries.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (385) 253-2721",
+                "contactType": "Customer Service",
+                "email": "ZaneLaFaver@gmail.com"
+            }
+        },
+        "url": "https://weblyindustries.com/ai-powered-intelligence.html",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Starter AI Package",
+                "price": "300",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "CompoundPriceSpecification",
+                    "price": "300",
+                    "priceCurrency": "USD",
+                    "billingIncrement": "P1M"
+                }
+            },
+            {
+                "@type": "Offer",
+                "name": "Professional AI Package",
+                "price": "799",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "CompoundPriceSpecification",
+                    "price": "799",
+                    "priceCurrency": "USD",
+                    "billingIncrement": "P1M"
+                }
+            },
+            {
+                "@type": "Offer",
+                "name": "Enterprise AI Package",
+                "price": "1999",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "CompoundPriceSpecification",
+                    "price": "1999",
+                    "priceCurrency": "USD",
+                    "billingIncrement": "P1M"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>

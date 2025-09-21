@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Test - Webly Industries</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+        .success {
+            background: #10b981;
+            color: white;
+        }
+        .error {
+            background: #ef4444;
+            color: white;
+        }
+        .info {
+            background: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>📧 Email Test - Webly Industries</h1>
+        <p>This will test sending emails directly to <strong>zanelafaverr@gmail.com</strong></p>
+        
+        <form id="emailTestForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" value="Test User" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" value="test@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" value="(555) 123-4567">
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Service Interest</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="starter">Starter Package</option>
+                    <option value="professional" selected>Professional Package</option>
+                    <option value="enterprise">Enterprise Package</option>
+                    <option value="consultation">Free Consultation</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Test Message</label>
+                <textarea id="message" name="message" rows="4">This is a test message to verify the email system is working correctly.</textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn">🚀 Send Test Email</button>
+        </form>
+        
+        <div id="messageDiv" class="message"></div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+            <h3>🔧 Debug Info:</h3>
+            <p><strong>EmailJS Status:</strong> <span id="emailjsStatus">Checking...</span></p>
+            <p><strong>Service ID:</strong> service_5mah61p</p>
+            <p><strong>Template ID:</strong> template_csb3b07</p>
+            <p><strong>Public Key:</strong> dyre1_fX8qkOs9Zif</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init('dyre1_fX8qkOs9Zif');
+            document.getElementById('emailjsStatus').textContent = '✅ Initialized';
+        })();
+
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('messageDiv');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+        }
+
+        function formatEmailData(formData) {
+            const timestamp = new Date().toLocaleString();
+            
+            const serviceMap = {
+                'starter': 'Starter Package ($300 installment)',
+                'professional': 'Professional Package ($7,999)',
+                'enterprise': 'Enterprise Package ($19,999)',
+                'consultation': 'Free Consultation'
+            };
+
+            return {
+                to_email: 'zanelafaverr@gmail.com',
+                from_name: formData.name,
+                from_email: formData.email,
+                phone: formData.phone || 'Not provided',
+                service: serviceMap[formData.service] || formData.service,
+                message: formData.message || 'No message provided',
+                timestamp: timestamp,
+                subject: `🧪 TEST EMAIL: ${formData.service} - ${formData.name}`,
+                formatted_message: `
+🧪 TEST EMAIL - WEBLY INDUSTRIES
+================================
+
+This is a test email to verify the contact form is working correctly.
+
+Contact Information:
+• Name: ${formData.name}
+• Email: ${formData.email}
+• Phone: ${formData.phone || 'Not provided'}
+
+Service Details:
+• Service Interest: ${serviceMap[formData.service] || formData.service}
+
+Test Message:
+${formData.message}
+
+Submission Details:
+• Sent: ${timestamp}
+• Source: Email Test Page
+• Status: TEST EMAIL
+
+---
+This is a test email from the Webly Industries contact form system.
+                `.trim()
+            };
+        }
+
+        document.getElementById('emailTestForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                const emailData = formatEmailData(data);
+                
+                console.log('📧 Sending email with data:', emailData);
+                
+                const result = await emailjs.send(
+                    'service_5mah61p',
+                    'template_csb3b07',
+                    {
+                        to_email: emailData.to_email,
+                        from_name: emailData.from_name,
+                        from_email: emailData.from_email,
+                        phone: emailData.phone,
+                        service: emailData.service,
+                        message: emailData.message,
+                        timestamp: emailData.timestamp,
+                        subject: emailData.subject,
+                        formatted_message: emailData.formatted_message
+                    }
+                );
+                
+                console.log('✅ Email sent successfully:', result);
+                showMessage('✅ Test email sent successfully! Check zanelafaverr@gmail.com', 'success');
+                
+            } catch (error) {
+                console.error('❌ Email sending failed:', error);
+                showMessage(`❌ Error: ${error.message}`, 'error');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
+

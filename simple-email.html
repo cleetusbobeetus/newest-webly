@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Email - Webly Industries</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        button { background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>📧 Simple Email Test</h1>
+    <p>This will create a mailto link that opens your email client with a pre-filled message.</p>
+    
+    <button onclick="sendEmail()">📧 Open Email Client</button>
+    
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        function sendEmail() {
+            const emailBody = `
+🎯 NEW CLIENT INQUIRY - WEBLY INDUSTRIES
+========================================
+
+👤 CONTACT INFORMATION
+• Name: Test User
+• Email: test@example.com
+• Phone: (555) 123-4567
+
+💼 SERVICE DETAILS
+• Service Interest: Professional Package ($7,999)
+
+📝 PROJECT DETAILS
+This is a test message to verify the email system is working correctly.
+
+📊 SUBMISSION INFO
+• Submitted: ${new Date().toLocaleString()}
+• Source: Webly Industries Website
+• Priority: MEDIUM PRIORITY
+
+---
+This is a test email from the Webly Industries contact form system.
+            `.trim();
+            
+            const mailtoLink = `mailto:zanelafaverr@gmail.com?subject=🎯 NEW CLIENT INQUIRY: Professional Package - Test User&body=${encodeURIComponent(emailBody)}`;
+            
+            try {
+                window.location.href = mailtoLink;
+                document.getElementById('result').textContent = '✅ Email client opened! Please send the pre-filled email.';
+                document.getElementById('result').className = 'result success';
+                document.getElementById('result').style.display = 'block';
+            } catch (error) {
+                document.getElementById('result').textContent = '❌ Could not open email client. Please copy this message and send it manually.';
+                document.getElementById('result').className = 'result error';
+                document.getElementById('result').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Cancelled - Webly Industries</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-567CX2EMCP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-567CX2EMCP');
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #020617 0%, #1a1a2e 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .cancel-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .cancel-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .alternatives {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .alternatives h3 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .alternatives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .alternatives li {
+            padding: 0.5rem 0;
+            color: #e2e8f0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .alternatives li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-warning:hover {
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info h4 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="cancel-container">
+        <div class="cancel-icon">⚠</div>
+        <h1>Payment Cancelled</h1>
+        <p>No worries! Your payment was cancelled and no charges were made.</p>
+        
+        <div class="alternatives">
+            <h3>Other ways to get started:</h3>
+            <ul>
+                <li>Contact me directly for a custom quote</li>
+                <li>Schedule a free consultation call</li>
+                <li>Get a detailed project proposal</li>
+                <li>Discuss flexible payment options</li>
+                <li>Ask questions about our services</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h4>Let's discuss your project</h4>
+            <p>📧 Email: ZaneLaFaver@gmail.com</p>
+            <p>📱 Phone: +1 (385) 253-2721</p>
+            <p>🌐 Available worldwide</p>
+        </div>
+
+        <a href="/" class="btn btn-primary">Return to Website</a>
+        <a href="/#contact" class="btn btn-secondary">Contact Form</a>
+        <a href="mailto:zanelafaverr@gmail.com" class="btn btn-warning">Email Me Directly</a>
+    </div>
+
+    <script>
+        // Auto-redirect after 20 seconds
+        setTimeout(() => {
+            if (confirm('Would you like to return to the main website?')) {
+                window.location.href = '/';
+            }
+        }, 20000);
+    </script>
+</body>
+</html>

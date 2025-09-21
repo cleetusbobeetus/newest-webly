@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Email Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        button { background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Simple Email Test</h1>
+    <p>Testing EmailJS with minimal configuration...</p>
+    
+    <button onclick="sendTestEmail()">Send Test Email</button>
+    
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        // Initialize EmailJS
+        emailjs.init('dyre1_fX8qkOs9Zif');
+        
+        async function sendTestEmail() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.textContent = 'Sending...';
+            resultDiv.className = 'result';
+            
+            try {
+                console.log('Starting email send...');
+                
+                const result = await emailjs.send(
+                    'service_5mah61p',
+                    'template_csb3b07',
+                    {
+                        to_email: 'zanelafaverr@gmail.com',
+                        from_name: 'Test User',
+                        from_email: 'test@example.com',
+                        phone: '(555) 123-4567',
+                        service: 'Test Service',
+                        message: 'This is a simple test message',
+                        timestamp: new Date().toLocaleString(),
+                        subject: 'Test Email from Webly Industries',
+                        formatted_message: 'This is a test email to verify the system is working.'
+                    }
+                );
+                
+                console.log('Email sent successfully:', result);
+                resultDiv.textContent = '✅ Email sent successfully! Check your Gmail.';
+                resultDiv.className = 'result success';
+                
+            } catch (error) {
+                console.error('Email error:', error);
+                console.error('Error details:', JSON.stringify(error, null, 2));
+                
+                let errorMessage = 'Unknown error';
+                if (error.message) {
+                    errorMessage = error.message;
+                } else if (error.text) {
+                    errorMessage = error.text;
+                } else if (error.status) {
+                    errorMessage = `Status ${error.status}: ${error.text || 'Request failed'}`;
+                } else {
+                    errorMessage = JSON.stringify(error);
+                }
+                
+                resultDiv.textContent = `❌ Error: ${errorMessage}`;
+                resultDiv.className = 'result error';
+            }
+        }
+    </script>
+</body>
+</html>

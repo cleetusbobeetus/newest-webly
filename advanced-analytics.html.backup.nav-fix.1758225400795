@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Advanced Analytics for Websites | Webly Industries - Real-Time Data Insights</title>
+    <meta name="title" content="Advanced Analytics for Websites | Webly Industries - Real-Time Data Insights">
+    <meta name="description" content="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates. Advanced website analytics starting at $300/month.">
+    <meta name="keywords" content="website analytics, user behavior tracking, conversion optimization, real-time analytics, data insights, web analytics, business intelligence, performance metrics">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/advanced-analytics.html">
+    <meta property="og:title" content="Advanced Analytics for Websites | Webly Industries">
+    <meta property="og:description" content="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates.">
+    <meta property="og:image" content="https://weblyindustries.com/images/advanced-analytics-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Advanced Analytics for Websites - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/advanced-analytics.html">
+    <meta property="twitter:title" content="Advanced Analytics for Websites | Webly Industries">
+    <meta property="twitter:description" content="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/advanced-analytics-twitter.jpg">
+    <meta property="twitter:image:alt" content="Advanced Analytics for Websites">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/advanced-analytics.html">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Consultation card styling for sublink pages */
+        .pricing-option.consultation {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%)}
+        
+        .pricing-option.consultation .pricing-price {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text}
+        
+        /* Launch promotion styling for sublink pages */
+        .pricing-option.launch-promotion {
+            border: 3px solid #fbbf24;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
+            transform: scale(1.02);
+            position: relative;
+            overflow: visible}
+        
+        .pricing-option.launch-promotion::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
+            border-radius: 20px;
+            z-index: -1;
+            animation: launchGlow 8s ease-in-out infinite alternate;
+            opacity: 0.8}
+        
+        .pricing-option.launch-promotion .pricing-price {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+            letter-spacing: -0.02em;
+            filter: contrast(1.1) brightness(1.05)}
+        
+        .pricing-option.launch-promotion .pricing-period {
+            color: #000000;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)}
+        
+        .pricing-option.launch-promotion .pricing-upkeep {
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)}
+        
+        .pricing-option.launch-promotion .pricing-features li {
+            color: #000000 !important;
+            font-weight: 600;
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            line-height: 1.6}
+        
+        .pricing-option.launch-promotion .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6)}
+    
+    </style>
+</head>
+<body>
+        <!-- Navigation -->
+                <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <span class="logo-text">Webly Industries</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero" id="home">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon" data-icon="📊">📊</div>
+            <h1 class="hero-title" data-title="Advanced Analytics">Advanced Analytics</h1>
+            <p class="hero-subtitle" data-subtitle="Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates and drive business growth">Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates and drive business growth</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#features" class="btn-secondary">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>Data-Driven Decisions That Drive Results</h2>
+                <p class="lead">At Webly Industries, we transform raw website data into actionable insights that help you understand your users, optimize your conversion funnel, and make informed business decisions. Our advanced analytics platform combines real-time tracking, AI-powered insights, and comprehensive reporting to give you the competitive edge you need.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <h3>Real-Time Tracking</h3>
+                        <p>Live monitoring of user behavior, page views, and conversions with instant updates and alerts for important events and trends.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Conversion Funnel Analysis</h3>
+                        <p>Detailed tracking of user journeys from first visit to conversion, identifying drop-off points and optimization opportunities.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI-Powered Insights</h3>
+                        <p>Machine learning algorithms that analyze patterns, predict user behavior, and provide actionable recommendations for improvement.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>Cross-Device Tracking</h3>
+                        <p>Comprehensive user journey tracking across desktop, mobile, and tablet devices to understand complete customer behavior.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Heatmap Analysis</h3>
+                        <p>Visual heatmaps showing where users click, scroll, and spend time on your pages to optimize layout and content placement.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3>Custom Dashboards</h3>
+                        <p>Personalized analytics dashboards with key metrics, KPIs, and reports tailored to your business goals and objectives.</p>
+                    </div>
+                </div>
+
+                <div class="analytics-features">
+                    <h3>Comprehensive Analytics Features</h3>
+                    <div class="analytics-grid">
+                        <div class="analytics-item">
+                            <h4>User Behavior Analysis</h4>
+                            <p>Track user interactions, session duration, bounce rates, and engagement metrics to understand user preferences</p>
+                        </div>
+                        <div class="analytics-item">
+                            <h4>E-commerce Tracking</h4>
+                            <p>Monitor sales, revenue, product performance, and shopping cart abandonment with detailed transaction analytics</p>
+                        </div>
+                        <div class="analytics-item">
+                            <h4>Content Performance</h4>
+                            <p>Analyze which content performs best, track engagement rates, and identify high-converting content strategies</p>
+                        </div>
+                        <div class="analytics-item">
+                            <h4>Traffic Sources</h4>
+                            <p>Monitor organic search, paid advertising, social media, and referral traffic to optimize marketing spend</p>
+                        </div>
+                        <div class="analytics-item">
+                            <h4>Goal Tracking</h4>
+                            <p>Set and monitor custom goals, conversions, and events to measure success and ROI</p>
+                        </div>
+                        <div class="analytics-item">
+                            <h4>Segmentation</h4>
+                            <p>Create user segments based on demographics, behavior, and preferences for targeted analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-insights">
+                    <h3>AI-Powered Business Intelligence</h3>
+                    <div class="ai-features-grid">
+                        <div class="ai-feature-item">
+                            <h4>Predictive Analytics</h4>
+                            <p>Forecast future trends, user behavior, and conversion rates using advanced machine learning models</p>
+                        </div>
+                        <div class="ai-feature-item">
+                            <h4>Anomaly Detection</h4>
+                            <p>Automatically identify unusual patterns, traffic spikes, or performance issues that require attention</p>
+                        </div>
+                        <div class="ai-feature-item">
+                            <h4>Smart Recommendations</h4>
+                            <p>AI-generated suggestions for improving conversion rates, user experience, and content optimization</p>
+                        </div>
+                        <div class="ai-feature-item">
+                            <h4>Automated Reporting</h4>
+                            <p>Intelligent reports that highlight key insights, trends, and actionable recommendations</p>
+                        </div>
+                        <div class="ai-feature-item">
+                            <h4>Customer Lifetime Value</h4>
+                            <p>Predict and track customer lifetime value to optimize acquisition and retention strategies</p>
+                        </div>
+                        <div class="ai-feature-item">
+                            <h4>Churn Prediction</h4>
+                            <p>Identify users at risk of churning and recommend retention strategies to improve customer loyalty</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="pricing-section">
+                    <h3>Flexible Pricing Plans</h3>
+                    <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
+                    <div class="pricing-options">
+                                        <div class="pricing-option consultation fade-in">
+                    <h3 class="pricing-title">Consultation</h3>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">completely free</div>
+                    
+                    <ul class="pricing-features">
+                        <li>Email Website Analysis</li>
+                        <li>Current Website Audit</li>
+                        <li>Identify Weaknesses & Issues</li>
+                        <li>Improvement Recommendations</li>
+                        <li>Technology Upgrade Suggestions</li>
+                        <li>Performance Optimization Tips</li>
+                        <li>Custom Action Plan</li>
+                        <li>No Obligation</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Book Now</a>
+                </div>
+                        
+                <div class="pricing-option launch-promotion featured fade-in">
+                    <div class="launch-badge">🚀 Launch Promotion!</div>
+                    <h3 class="pricing-title">Starter Website + Maintenance</h3>
+                    <div class="pricing-price">$300</div>
+                    <div class="pricing-period">installment</div>
+                    <div class="pricing-upkeep">$99 monthly upkeep/installments</div>
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>SSL Certificate Included</li>
+                        <li>Monthly Updates & Changes</li>
+                        <li>Priority Support</li>
+                        <li>Performance Monitoring</li>
+                        <li>Security Updates</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Starter</h3>
+                    <div class="pricing-price">$2,999</div>
+                    <div class="pricing-period">or $299/month for 12 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>3 Months Free Maintenance</li>
+                        <li>SSL Certificate Included</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Professional</h3>
+                    <div class="pricing-price">$7,999</div>
+                    <div class="pricing-period">or $399/month for 24 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>15-Page Advanced Website</li>
+                        <li>3D Graphics & Animations</li>
+                        <li>AI-Powered Features</li>
+                        <li>E-commerce Integration</li>
+                        <li>Advanced Analytics</li>
+                        <li>6 Months Free Maintenance</li>
+                        <li>Priority Support</li>
+                        <li>Custom Admin Dashboard</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Unlock Your Data's Potential?</h3>
+                    <p>Stop guessing what your users want. Our advanced analytics will show you exactly how to optimize your website for maximum conversions and growth.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">Get Free Analytics Audit</a>
+                        <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Get Advanced Analytics?</h2>
+            <p class="section-subtitle">Let's discuss how advanced analytics can optimize your website</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to unlock the power of your website data? Contact us to discuss your analytics needs and get a free consultation.</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="analytics-basic">Basic Analytics</option>
+                                <option value="analytics-professional">Professional Analytics</option>
+                                <option value="consultation">Free Analytics Audit</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your analytics requirements..."></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="📊 ADVANCED ANALYTICS INQUIRY - Webly Industries">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webly Industries. All rights reserved. | Built with advanced analytics</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Advanced Analytics Service",
+        "name": "Advanced Analytics",
+        "description": "Get real-time analytics and user behavior tracking with AI-powered insights to optimize your conversion rates and drive business growth.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Webly Industries",
+            "url": "https://weblyindustries.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (385) 253-2721",
+                "contactType": "Customer Service",
+                "email": "ZaneLaFaver@gmail.com"
+            }
+        },
+        "url": "https://weblyindustries.com/advanced-analytics.html",
+        "offers": [
+            {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI-Powered Insights",
+                        "description": "Machine learning algorithms for predictive analytics"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Conversion Funnel Analysis",
+                        "description": "Detailed tracking of user journeys and optimization"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>

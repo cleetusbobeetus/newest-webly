@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Lightning Performance Web Development | Webly Industries - Speed Optimization</title>
+    <meta name="title" content="Lightning Performance Web Development | Webly Industries - Speed Optimization">
+    <meta name="description" content="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities. Instant loading and offline functionality. Professional speed optimization starting at $300/month.">
+    <meta name="keywords" content="website performance optimization, fast loading websites, PWA development, lazy loading, advanced caching, Core Web Vitals, speed optimization, performance monitoring, website acceleration">
+    <meta name="author" content="Zane LaFaver - Webly Industries">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblyindustries.com/lightning-performance.html">
+    <meta property="og:title" content="Lightning Performance Web Development | Webly Industries">
+    <meta property="og:description" content="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities. Instant loading and offline functionality.">
+    <meta property="og:image" content="https://weblyindustries.com/images/lightning-performance-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Lightning Performance Web Development - Webly Industries">
+    <meta property="og:site_name" content="Webly Industries">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weblyindustries.com/lightning-performance.html">
+    <meta property="twitter:title" content="Lightning Performance Web Development | Webly Industries">
+    <meta property="twitter:description" content="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities. Instant loading and offline functionality.">
+    <meta property="twitter:image" content="https://weblyindustries.com/images/lightning-performance-twitter.jpg">
+    <meta property="twitter:image:alt" content="Lightning Performance Web Development">
+    <meta property="twitter:creator" content="@WeblyIndustries">
+    <meta property="twitter:site" content="@WeblyIndustries">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblyindustries.com/lightning-performance.html">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Consultation card styling for sublink pages */
+        .pricing-option.consultation {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%)}
+        
+        .pricing-option.consultation .pricing-price {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text}
+        
+        /* Launch promotion styling for sublink pages */
+        .pricing-option.launch-promotion {
+            border: 3px solid #fbbf24;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), 0 0 80px rgba(245, 158, 11, 0.2);
+            transform: scale(1.02);
+            position: relative;
+            overflow: visible}
+        
+        .pricing-option.launch-promotion::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
+            border-radius: 20px;
+            z-index: -1;
+            animation: launchGlow 8s ease-in-out infinite alternate;
+            opacity: 0.8}
+        
+        .pricing-option.launch-promotion .pricing-price {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+            letter-spacing: -0.02em;
+            filter: contrast(1.1) brightness(1.05)}
+        
+        .pricing-option.launch-promotion .pricing-period {
+            color: #000000;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)}
+        
+        .pricing-option.launch-promotion .pricing-upkeep {
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)}
+        
+        .pricing-option.launch-promotion .pricing-features li {
+            color: #000000 !important;
+            font-weight: 600;
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            line-height: 1.6}
+        
+        .pricing-option.launch-promotion .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.6)}
+    
+    </style>
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            /* Enhanced smooth scrolling for better UX */
+            @media (prefers-reduced-motion: no-preference) {
+                html {
+                    scroll-behavior: smooth;
+                }
+            }
+            
+            /* Respect user's motion preferences */
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+            }
+        </style>
+        </head>
+<body>
+        <!-- Navigation -->
+                <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#home">
+                    <img src="Public/Images/webly logo.png" alt="Webly Industries" class="logo-image">
+                    <span class="logo-text">Webly Industries</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#process">Process</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero service-hero" id="home">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <a href="index.html#features" class="back-to-features">← Back to Features</a>
+            <div class="service-icon" data-icon="⚡">⚡</div>
+            <h1 class="hero-title" data-title="Lightning Performance">Lightning Performance</h1>
+            <p class="hero-subtitle" data-subtitle="Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality">Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality</p>
+            <div class="hero-cta">
+                <a href="index.html#pricing" class="btn-primary">View Pricing Plans</a>
+                <a href="index.html#features" class="btn-secondary">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>Blazing Fast Websites That Convert Better</h2>
+                <p class="lead">At Webly Industries, we specialize in creating lightning-fast websites that load in under 2 seconds and score 90+ on Google's Core Web Vitals. Our performance optimization techniques ensure your website not only looks great but also delivers exceptional speed that keeps users engaged and drives conversions.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Advanced Caching</h3>
+                        <p>Multi-layer caching strategies including browser caching, CDN optimization, and server-side caching to reduce load times by up to 80%.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>PWA Capabilities</h3>
+                        <p>Progressive Web App features that enable offline functionality, push notifications, and app-like experiences on mobile devices.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🖼️</div>
+                        <h3>Lazy Loading</h3>
+                        <p>Intelligent image and content lazy loading that loads resources only when needed, reducing initial page load time by 60%.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3>Core Web Vitals</h3>
+                        <p>Optimized for Google's Core Web Vitals with perfect scores on LCP, FID, and CLS metrics for better search rankings.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Code Optimization</h3>
+                        <p>Minified CSS, JavaScript, and HTML with tree-shaking and dead code elimination for maximum efficiency.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <h3>CDN Integration</h3>
+                        <p>Global Content Delivery Network integration for faster content delivery worldwide with 99.9% uptime guarantee.</p>
+                    </div>
+                </div>
+
+                <div class="performance-metrics">
+                    <h3>Performance Guarantees</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-number">&lt;2s</div>
+                            <div class="metric-label">Page Load Time</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">90+</div>
+                            <div class="metric-label">Core Web Vitals Score</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">99.9%</div>
+                            <div class="metric-label">Uptime Guarantee</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">A+</div>
+                            <div class="metric-label">Security Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="optimization-techniques">
+                    <h3>Advanced Optimization Techniques</h3>
+                    <div class="techniques-grid">
+                        <div class="technique-item">
+                            <h4>Image Optimization</h4>
+                            <p>WebP format conversion, responsive images, and automatic compression for 70% smaller file sizes</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>Critical CSS</h4>
+                            <p>Above-the-fold CSS inlined for instant rendering while non-critical styles load asynchronously</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>Resource Hints</h4>
+                            <p>Preconnect, prefetch, and preload directives to optimize resource loading and reduce latency</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>Service Workers</h4>
+                            <p>Background caching and offline functionality for seamless user experiences</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>HTTP/2 Push</h4>
+                            <p>Server push technology to send critical resources before they're requested</p>
+                        </div>
+                        <div class="technique-item">
+                            <h4>Database Optimization</h4>
+                            <p>Query optimization and indexing for faster data retrieval and processing</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="pricing-section">
+                    <h3>Flexible Pricing Plans</h3>
+                    <p class="section-subtitle">Choose the perfect plan for your business with our flexible installment options and monthly maintenance services</p>
+                    <div class="pricing-options">
+                                        <div class="pricing-option consultation fade-in">
+                    <h3 class="pricing-title">Consultation</h3>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">completely free</div>
+                    
+                    <ul class="pricing-features">
+                        <li>Email Website Analysis</li>
+                        <li>Current Website Audit</li>
+                        <li>Identify Weaknesses & Issues</li>
+                        <li>Improvement Recommendations</li>
+                        <li>Technology Upgrade Suggestions</li>
+                        <li>Performance Optimization Tips</li>
+                        <li>Custom Action Plan</li>
+                        <li>No Obligation</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Book Now</a>
+                </div>
+                        
+                <div class="pricing-option launch-promotion featured fade-in">
+                    <div class="launch-badge">🚀 Launch Promotion!</div>
+                    <h3 class="pricing-title">Starter Website + Maintenance</h3>
+                    <div class="pricing-price">$300</div>
+                    <div class="pricing-period">installment</div>
+                    <div class="pricing-upkeep">$99 monthly upkeep/installments</div>
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>SSL Certificate Included</li>
+                        <li>Monthly Updates & Changes</li>
+                        <li>Priority Support</li>
+                        <li>Performance Monitoring</li>
+                        <li>Security Updates</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Starter</h3>
+                    <div class="pricing-price">$2,999</div>
+                    <div class="pricing-period">or $299/month for 12 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>5-Page Custom Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>Contact Form Integration</li>
+                        <li>3 Months Free Maintenance</li>
+                        <li>SSL Certificate Included</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                <div class="pricing-option fade-in">
+                    
+                    <h3 class="pricing-title">Professional</h3>
+                    <div class="pricing-price">$7,999</div>
+                    <div class="pricing-period">or $399/month for 24 months</div>
+                    
+                    <ul class="pricing-features">
+                        <li>15-Page Advanced Website</li>
+                        <li>3D Graphics & Animations</li>
+                        <li>AI-Powered Features</li>
+                        <li>E-commerce Integration</li>
+                        <li>Advanced Analytics</li>
+                        <li>6 Months Free Maintenance</li>
+                        <li>Priority Support</li>
+                        <li>Custom Admin Dashboard</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+                        
+                
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Speed Up Your Website?</h3>
+                    <p>Don't let slow loading times cost you customers. Our performance optimization services will transform your website into a lightning-fast conversion machine.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn-primary">Get Free Performance Audit</a>
+                        <a href="index.html#pricing" class="btn-secondary">View All Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Optimize Your Website Performance?</h2>
+            <p class="section-subtitle">Let's discuss how we can make your website lightning fast</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to boost your website's performance? Contact us to discuss your optimization needs and get a free performance audit.</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <p>📧 ZaneLaFaver@gmail.com</p>
+                        <p>📱 +1 (385) 253-2721</p>
+                        <p>🌐 Available worldwide</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mblavgnv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="performance-basic">Basic Performance</option>
+                                <option value="performance-professional">Professional Performance</option>
+                                <option value="consultation">Free Performance Audit</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your performance optimization needs..."></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="⚡ LIGHTNING PERFORMANCE INQUIRY - Webly Industries">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_next" value="?success=true">
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Webly Industries LLC. All rights reserved. | Built for lightning-fast performance</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Website Performance Optimization Service",
+        "name": "Lightning Performance",
+        "description": "Optimize your website for lightning-fast performance with advanced caching, lazy loading, and PWA capabilities for instant loading and offline functionality.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Webly Industries",
+            "url": "https://weblyindustries.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (385) 253-2721",
+                "contactType": "Customer Service",
+                "email": "ZaneLaFaver@gmail.com"
+            }
+        },
+        "url": "https://weblyindustries.com/lightning-performance.html",
+        "offers": [
+            {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "PWA Capabilities",
+                        "description": "Progressive Web App features for offline functionality"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Lazy Loading",
+                        "description": "Intelligent resource loading for optimal performance"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="email-service.js"></script>
+    <script src="seo-analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>
