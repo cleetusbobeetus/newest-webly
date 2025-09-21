@@ -567,10 +567,20 @@ body {
   .contact-info {
     order: 1;
     margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
   }
   
   .contact-form {
     order: 2;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
   }
 
   .features-grid {
@@ -1661,19 +1671,21 @@ body {
     margin: 0 auto;
 }
 
-.contact-grid {
+@media (min-width: 769px) {
+  .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin-top: 4rem;
-}
-
-.contact-info {
+  }
+  
+  .contact-info {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 3rem;
+  }
 }
 
 /* Style for checkmarks in contact info */
